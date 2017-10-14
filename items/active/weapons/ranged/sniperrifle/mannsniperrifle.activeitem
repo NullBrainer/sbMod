@@ -1,0 +1,83 @@
+{
+  "itemName" : "mannsniperrifle",
+  "price" : 15,
+  "inventoryIcon" : "mannsniperrifle.png",
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Used to be powered by being zoomed in.",
+  "shortdescription" : "Mann Co. Sniper Rifle",
+  "level" : 5,
+  "tooltipKind" : "gun",
+  "category" : "sniperRifle",
+  "itemTags" : ["weapon","ranged","rifle"],
+  "twoHanded" : true,
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "mannsniperrifle.png",
+    "barrel" : "",
+    "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot.ogg" ]
+    }
+  },
+
+  "baseOffset" : [0.9, 0.56],
+  "muzzleOffset" : [2.4, -0.30],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility" : {
+    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
+    "class" : "GunFire",
+
+    "fireTime" : 1.55,
+    "baseDps" : 9.45,
+    "energyUsage" : 5,
+    "inaccuracy" : 0.0,
+
+    "projectileCount" : 1,
+    "fireType" : "auto",
+
+    "projectileType" : "standardbullet",
+    "projectileParameters" : {
+      "knockback" : 20
+    },
+    "stances" : {
+      "idle" : {
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : true,
+        "allowFlip" : true
+      },
+      "fire" : {
+        "duration" : 0,
+        "armRotation" : 5,
+        "weaponRotation" : 5,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      },
+      "cooldown" : {
+        "duration" : 0.25,
+        "armRotation" : 8,
+        "weaponRotation" : 8,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  },
+
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

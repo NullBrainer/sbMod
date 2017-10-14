@@ -1,0 +1,24 @@
+{
+  "projectileName" : "stockrocket",
+  "image" : "stockrocket.png",
+  "animationCycle" : 0.4,
+  "frameNumber" : 4,
+  "damageKindImage" : "icon.png",
+  "lightColor" : [255, 255, 128],
+  "pointLight" : true,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/mannexplosions/mannstockexplosion.config"
+    }
+  ],
+ 
+  "statusEffects" : [ ],
+  "emitters" : [ "rocketsmoke" ],
+  "power" : 10.0,
+  "speed" : 1.0,
+  "acceleration" : 150,
+  "physics" : "rocket",
+  "damageType" : "NoDamage",
+  "damageKind" : "default"
+}

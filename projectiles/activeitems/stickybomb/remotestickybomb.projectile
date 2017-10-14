@@ -1,0 +1,25 @@
+{
+  "projectileName" : "remotestickybomb",
+  "physics" : "stickygrenade",
+  "bounces" : -1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [90, 30, 30],
+  "image" : "remotestickybomb.png",
+  "animationCycle" : 0.75,
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/mannexplosions/mannstockexplosion.config"
+    }
+  ],
+  "power" : 50,
+  "damageType" : "NoDamage",
+  "damageKind" : "default",
+  "onlyHitTerrain" : true,
+
+  "timeToLive" : 8,
+
+  "scripts" : [ "remotestickybomb.lua" ]
+}

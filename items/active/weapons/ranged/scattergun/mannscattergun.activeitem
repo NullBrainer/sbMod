@@ -1,0 +1,84 @@
+{
+  "itemName" : "mannscattergun",
+  "price" : 5,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A Boston Favorite.",
+  "shortdescription" : "Mann Co. Scattergun",
+  "tooltipKind" : "gun",
+  "category" : "shotgun",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged","shotgun"],
+  "level" : 2,
+
+  "inventoryIcon" : "mannscattergun.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts": {
+    "butt": "",
+    "middle": "mannscattergun.png",
+    "barrel": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fire" : ["/sfx/gun/scatter_gun_shoot.ogg"]
+    }
+  },
+
+  "baseOffset" : [0.9, 0.05],
+  "muzzleOffset" : [2, 0.125],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "physical",
+
+  "primaryAbility": {
+    "scripts": [ "/items/active/weapons/ranged/gunfire.lua" ],
+    "class": "GunFire",
+
+    "fireTime": 0.60,
+    "baseDps": 40.0,
+    "energyUsage": 32.0,
+    "inaccuracy": 0.10,
+
+    "projectileCount": 10,
+    "fireType": "auto",
+
+    "projectileType": "standardbullet",
+    "projectileParameters": {
+      "damageKind": "shotgunbullet",
+      "knockback": 25
+    },
+    "stances": {
+      "idle": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "fire": {
+        "duration": 0,
+        "armRotation": 8,
+        "weaponRotation": 8,
+        "twoHanded": true,
+
+        "allowRotate": false,
+        "allowFlip": false
+      },
+      "cooldown": {
+        "duration": 0.15,
+        "armRotation": 8,
+        "weaponRotation": 8,
+        "twoHanded": true,
+
+        "allowRotate": false,
+        "allowFlip": false
+      }
+    }
+  },
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

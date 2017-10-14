@@ -1,0 +1,47 @@
+{
+  "itemName" : "mannflamethrower",
+  "level" : 3,
+  "price" : 30,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A mercenary's favorite hippy burner.",
+  "shortdescription" : "Mann Co. Flamethrower",
+  "tooltipKind" : "gun",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon","ranged"],
+
+  "inventoryIcon" : "mannflamethrower.png",
+
+  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animationParts" : {
+    "butt" : "",
+    "middle" : "/items/active/weapons/ranged/mannflamethrower/mannflamethrower.png",
+    "barrel" : "",
+    "muzzleFlash" : ""
+  },
+  "animationCustom" : {
+    "sounds" : {
+      "fireStart" : [ "/sfx/gun/flame_thrower_start.ogg" ],
+      "fireLoop" : [ "/sfx/gun/flame_thrower_loop.ogg" ],
+      "fireEnd" : [ "/sfx/gun/flame_thrower_stop.ogg" ]
+    }
+  },
+  "baseOffset" : [1.45, 0],
+  "muzzleOffset" : [2.9, 0.4],
+
+  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+
+  "elementalType" : "fire",
+
+  "primaryAbilityType" : "flamethrower",
+  "primaryAbility" : {
+    "baseDps" : 30,
+    "energyUsage" : 15
+  },
+
+  "altAbilityType" : "compressionblast",
+  "altAbility": {},
+
+  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+}

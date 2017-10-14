@@ -1,0 +1,31 @@
+{
+  "itemName" : "mannstickybomblauncher",
+  "price": 1500,
+  "level" : 6,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "Launches sticky bombs than explode remotely",
+  "shortdescription" : "Sticky Bomb Launcher",
+  "tooltipKind" : "base",
+  "category" : "grenadeLauncher",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+
+  "inventoryIcon" : "mannstickybomblauncher.png",
+  "animation" : "mannstickybomblauncher.animation",
+  "animationParts" : {
+    "gun" : "mannstickybomblauncher.png"
+  },
+  "animationCustom" : { },
+  "scripts" : ["mannstickybomblauncher.lua"],
+  "fireOffset" : [3.10, 0.625],
+  "fireTime" : 0.67,
+  "inaccuracy" : 0.02,
+
+  "projectileType" : "remotestickybomb",
+  "projectileParameters" : {
+    "power" : 8,
+    "timeToLive" : 8
+  },
+  "energyUsage" : 13
+}

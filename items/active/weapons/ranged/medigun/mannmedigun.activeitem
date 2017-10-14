@@ -1,0 +1,40 @@
+{
+  "itemName": "mannmedigun",
+  "price": 640,
+  "twoHanded": true,
+  "inventoryIcon": "medigun.png",
+  "maxStack": 1,
+  "rarity": "Rare",
+  "description": "The medical tool of a mercenary.",
+  "shortdescription": "fucboi blastur 69420",
+  "tooltipKind": "gun",
+  "level": 5,
+  "category": "uniqueWeapon",
+  "itemTags": [ "weapon", "ranged" ],
+
+  "animation": "medigun.animation",
+  "animationParts": {
+    "middle": "medigun.png",
+    "middleFullbright": "medibeamfullbright.png",
+    "muzzleFlash": ""
+  },
+  "animationScripts": [ "/items/active/effects/chain.lua" ],
+  "animationCustom": {
+    "sounds": {
+      "fireStart": [ "/sfx/gun/medigun_heal.ogg" ],
+      "noTarget": [ "/sfx/gun/medigun_no_target.ogg" ]
+    }
+  },
+  "muzzleOffset": [ 1.5625, 0.375 ],
+
+  "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
+
+  "elementalType": "physical",
+
+  "primaryAbilityType": "medibeam",
+  "primaryAbility": {
+
+  },
+
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}

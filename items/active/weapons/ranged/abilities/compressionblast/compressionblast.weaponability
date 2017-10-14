@@ -1,0 +1,85 @@
+{
+  "animationParts" : { },
+  "animationCustom" : {
+    "animatedParts" : {
+      "stateTypes" : {
+        "compressionBlastFire" : {
+          "default" : "idle",
+          "states" : {
+            "idle" : {},
+            "fire" : {
+              "frames" : 1,
+              "cycle" : 0.2,
+              "mode" : "transition",
+              "transition" : "idle"
+            }
+          }
+        }
+      },
+      "parts" : {
+        "airBlast" : {
+          "properties" : {
+            "offset" : [0.0, 0.0],
+            "transformationGroups" : ["muzzle"],
+            "damageArea" : [ [-1.0, 1.0], [3.0, 1.0], [3.0, -1.0], [-1.0, -1.0] ]
+          },
+          "partStates" : {
+            "compressionBlastFire" : {
+              "fire" : {
+                "properties" : {
+                  "fullbright" : true
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "particleEmitters" : {
+      "burstShotSmoke" : {
+        "active" : false,
+        "emissionRate" : 20,
+        "transformationGroups" : ["muzzle"],
+        "offsetRegion" : [0.0, -1.0, 2.5, 1.0],
+        "particles" : [
+         { "particle" : "smoke"},
+         { "particle" : "rocketsmoke"},
+         { "particle" : "rocketbarrelpuff"}
+        ]
+      }
+    },
+    "sounds" : {
+      "airblast" : [ "/sfx/gun/flame_thrower_airblast.ogg" ]
+    }
+  },
+
+  "ability" : {
+    "name" : "Compression Blast",
+    "type" : "compressionblast",
+    "scripts" : ["/items/active/weapons/ranged/abilities/compressionblast/compressionblast.lua"],
+    "class" : "CompressionBlast",
+
+    "energyUsage" : 10.0,
+    "cooldownTime" : 0.6,
+    "damageConfig" : {
+      "baseDamage" : 0,
+      "damageSourceKind" : "standardbullet",
+      "knockback" : 50,
+      "knockbackMode" : "aim",
+      "timeout" : 0.5,
+      "timeoutGroup" : "alt"
+    },
+
+    "stances" : {
+      "fire" : {
+        "duration" : 0.20,
+        "armRotation" : 0,
+        "weaponRotation" : 0,
+        "twoHanded" : true,
+
+        "allowRotate" : false,
+        "allowFlip" : false
+      }
+    }
+  }
+}

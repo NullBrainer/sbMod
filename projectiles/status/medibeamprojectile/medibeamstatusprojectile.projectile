@@ -1,0 +1,19 @@
+{
+  "projectileName" : "medibeamstatusprojectile",
+  "physics" : "statuspod",
+  "bounces" : -1,
+  "timeToLive" : 0.25,
+  "speed" : 0,
+  "damageKindImage" : "icon.png",
+  "image" : "medibeamstatusprojectile.png",
+  "power" : 0,
+  "piercing" : true,
+  "damageKind" : "hidden",
+  "damageType" : "ignoresdef",
+  "damagePoly" : [ [-1, -1], [-1, 1], [1, 1], [1, -1]  ],
+  "flippable" : true,
+  "damageTeam" : { "type" : "enemy" },
+  "statusEffects" : [
+    {"effect" : "medibeamheal", "duration" : 0.1}
+  ]
+}

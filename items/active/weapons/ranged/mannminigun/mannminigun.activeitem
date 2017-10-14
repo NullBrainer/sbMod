@@ -1,0 +1,45 @@
+{
+  "itemName": "mannminigun",
+  "level": 2,
+  "price": 1500,
+  "maxStack": 1,
+  "rarity": "Legendary",
+  "description": "Her name is Sasha",
+  "shortdescription": "Sasha",
+  "tooltipKind": "gun",
+  "category": "uniqueWeapon",
+  "twoHanded": true,
+  "itemTags": [ "weapon", "ranged" ],
+
+  "inventoryIcon": "mannminigun.png",
+
+  "animation": "/items/active/weapons/ranged/gun.animation",
+  "animationParts": {
+    "butt": "",
+    "middle": "/items/active/weapons/ranged/mannminigun/mannminigun.png",
+    "barrel": "",
+    "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
+  },
+  "animationCustom": {
+    "sounds": {
+      "fireStart": [ "/sfx/gun/minigun_wind_up.ogg" ],
+      "spinStart": [ "/sfx/gun/minigun_spin.ogg" ],
+      "fireLoop": [ "/sfx/gun/minigun_shoot.ogg" ],
+      "fireEnd": [ "/sfx/gun/minigun_wind_down.ogg" ]
+    }
+  },
+  "baseOffset": [ 0.75, 0 ],
+  "muzzleOffset": [ 2.5, 0.4 ],
+
+  "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
+
+  "elementalType": "physical",
+
+  "primaryAbilityType": "minigunshoot",
+  "primaryAbility": {
+
+  },
+
+
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}
