@@ -68,6 +68,21 @@ function MinigunAttack:cooldown()
   end)
 end
 
+function MinigunAttack:windup()
+	self.weapon.setStance(self.stances.windup)
+	self.weapon:updateAim()
+	local progress = 0
+
+	util.wait(self.stances.windup.duration, function()
+	local from = self.stances.weaponOffset or (0,0)
+	local to = self.stances.idle.weaponOffset or {0,0)
+	self.weaponOffset = (interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2]))
+
+	self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.windup.weaponRotation, self.stances.fire.weaponRotation))
+	self.weapon.relativeArmRotation = util.toRadians(interp.lineTileCollision(progress, self.stances.windup.armRotation, self.stances.fire.armRotation))
+)
+end
+
 function MinigunAttack:muzzleFlash()
   animator.setPartTag("muzzleFlash", "variant", math.random(1, 3))
   animator.setAnimationState("firing", "fire")

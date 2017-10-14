@@ -21,7 +21,7 @@
     "stances": {
       "idle": {
         "armRotation": 0,
-        "weaponRotation": 45,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,
@@ -37,9 +37,9 @@
         "allowFlip": true
       },
       "windup": {
-        "duration": 2,
-        "armRotation": -45,
-        "weaponRotation": -45,
+        "duration": 5,
+        "armRotation": 0,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,
