@@ -30,21 +30,21 @@ function MinigunAttack:update(dt, fireMode, shiftHeld)
     if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then
 	--windup
       self:setState(self.auto)
-	  --winddown
-  end
+	end
 end
 end
 
 function MinigunAttack:auto()
+  self:setState(self.windup)
+if self.stances.windup.duration then
+util.wait(self.stances,windup.duration)
   self.weapon:setStance(self.stances.fire)
-
   self:fireProjectile()
   self:muzzleFlash()
-
   if self.stances.fire.duration then
     util.wait(self.stances.fire.duration)
   end
-
+end
   self.cooldownTimer = self.fireTime
   self:setState(self.cooldown)
 end
