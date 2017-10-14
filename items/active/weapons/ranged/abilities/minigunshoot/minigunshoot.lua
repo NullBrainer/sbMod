@@ -27,24 +27,28 @@ function MinigunAttack:update(dt, fireMode, shiftHeld)
     and not status.resourceLocked("energy")
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
 
-    if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then
-	--windup
-      self:setState(self.auto)
+    if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then	
+		self.weapon:setStance(self.stances.windup)
+		if self.stances.windup.duration then
+			util.wait(self.stances.windup.duration)
+		end
+		self:setState(self.fire)
 	end
 end
 end
 
-function MinigunAttack:auto()
-  self:setState(self.windup)
-if self.stances.windup.duration then
-util.wait(self.stances,windup.duration)
+
+
+function MinigunAttack:fire()
+
   self.weapon:setStance(self.stances.fire)
   self:fireProjectile()
   self:muzzleFlash()
+
   if self.stances.fire.duration then
     util.wait(self.stances.fire.duration)
   end
-end
+
   self.cooldownTimer = self.fireTime
   self:setState(self.cooldown)
 end
@@ -69,6 +73,7 @@ function MinigunAttack:cooldown()
 end
 
 function MinigunAttack:windup()
+	animator.playSound("fireStart")
 	self.weapon.setStance(self.stances.windup)
 	self.weapon:updateAim()
 	local progress = 0
@@ -76,21 +81,22 @@ function MinigunAttack:windup()
 	util.wait(self.stances.windup.duration, function()
 	local from = self.stances.weaponOffset or {0,0}
 	local to = self.stances.idle.weaponOffset or {0,0}
-	self.weapon.weaponOffset = (interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2]))
+	self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
 
 	self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.windup.weaponRotation, self.stances.fire.weaponRotation))
 	self.weapon.relativeArmRotation = util.toRadians(interp.lineTileCollision(progress, self.stances.windup.armRotation, self.stances.fire.armRotation))
-)
+end)
 end
 
 function MinigunAttack:muzzleFlash()
   animator.setPartTag("muzzleFlash", "variant", math.random(1, 3))
   animator.setAnimationState("firing", "fire")
   animator.burstParticleEmitter("muzzleFlash")
-  animator.playSound("fire")
+  animator.playSound("fireLoop")
 
   animator.setLightActive("muzzleFlash", true)
 end
+
 
 function MinigunAttack:fireProjectile(projectileType, projectileParams, inaccuracy, firePosition, projectileCount)
   local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
