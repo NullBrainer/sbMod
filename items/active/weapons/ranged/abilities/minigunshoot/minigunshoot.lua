@@ -28,10 +28,7 @@ function MinigunAttack:update(dt, fireMode, shiftHeld)
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
 
     if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then	
-		self.weapon:setStance(self.stances.windup)
-		if self.stances.windup.duration then
-			util.wait(self.stances.windup.duration)
-		end
+		self:setState(self.windup)
 		self:setState(self.fire)
 	end
 end
@@ -77,8 +74,6 @@ function MinigunAttack:windup()
 	self.weapon.setStance(self.stances.windup)
 	self.weapon:updateAim()
 	local progress = 0
-
-	util.wait(self.stances.windup.duration, function()
 	local from = self.stances.weaponOffset or {0,0}
 	local to = self.stances.idle.weaponOffset or {0,0}
 	self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
