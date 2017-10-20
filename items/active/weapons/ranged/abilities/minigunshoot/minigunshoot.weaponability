@@ -20,8 +20,8 @@
 
     "stances": {
       "idle": {
-        "armRotation": 0,
-        "weaponRotation": 0,
+        "armRotation": 45,
+        "weaponRotation": -45,
         "twoHanded": true,
 
         "allowRotate": true,
@@ -30,23 +30,23 @@
       "fire": {
         "duration": 0,
         "armRotation": 0,
-        "weaponRotation": 0,
+        "weaponRotation": 0.1,
         "twoHanded": true,
 
         "allowRotate": true,
         "allowFlip": true
       },
       "windup": {
-        "duration": 1,
-        "armRotation": 0,
-        "weaponRotation": 0,
+        "duration": 2,
+        "armRotation": -45,
+        "weaponRotation": 45,
         "twoHanded": true,
 
         "allowRotate": true,
         "allowFlip": true
       },
       "cooldown": {
-        "duration": 0.05,
+        "duration": 0.5,
         "armRotation": 1,
         "weaponRotation": 2,
         "twoHanded": true,
