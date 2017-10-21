@@ -26,10 +26,12 @@ function MinigunAttack:update(dt, fireMode, shiftHeld)
     and self.cooldownTimer == 0
     and not status.resourceLocked("energy")
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
-		self:setState(self.windup)
-		
+					
     if status.overConsumeResource("energy", self:energyPerShot()) then	
+			animator.playSound("fireStart")
+			self:setState(self.windup)
 			self:setState(self.fire)			
+			
 	end
 end
 end
@@ -38,10 +40,25 @@ end
 
 function MinigunAttack:fire()
 
+
   self.weapon:setStance(self.stances.fire)
-  self:muzzleFlash()
+
+  local progress = 0
+  util.wait(self.stances.windup.duration, function()
+    local from = self.stances.idle.weaponOffset or {0,0}
+    local to = self.stances.fire.weaponOffset or {0,0}
+    self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
+
+    self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.idle.weaponRotation, self.stances.fire.weaponRotation))
+    self.weapon.relativeArmRotation = util.toRadians(interp.linear(progress, self.stances.idle.armRotation, self.stances.fire.armRotation))
+
+    progress = math.min(1.0, progress + (self.dt / self.stances.windup.duration))
+  end)
+  
+  animator.playSound("fireLoop")
   while self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) do
 	self:fireProjectile()
+	self:muzzleFlash()
 	util.wait(self.stances.fire.duration)
 	coroutine.yield()
   end
@@ -70,22 +87,21 @@ function MinigunAttack:cooldown()
 end
 
 function MinigunAttack:windup()
---while mouse is down do this animation thing
-	animator.playSound("fireStart")
+
 	self.weapon:setStance(self.stances.windup)
 	self.weapon:updateAim()
 	local progress = 0
 	
 	util.wait(self.stances.windup.duration, function()
-	local from = self.stances.weaponOffset or {0,0}
-	local to = self.stances.idle.weaponOffset or {0,0}
+	local from = self.stances.windup.weaponOffset or {0,0}
+	local to = self.stances.fire.weaponOffset or {0,0}
 	self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
 
 	self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.windup.weaponRotation, self.stances.fire.weaponRotation))
 	self.weapon.relativeArmRotation = util.toRadians(interp.linear(progress, self.stances.windup.armRotation, self.stances.fire.armRotation))
-	progress = math.min(1.0, progress + (self.dt / self.stances.cooldown.duration))
-	coroutine.yield()
+	progress = math.min(1.0, progress + (self.dt / self.stances.windup.duration))
 end)
+
 end
 
 
@@ -93,7 +109,7 @@ function MinigunAttack:muzzleFlash()
   animator.setPartTag("muzzleFlash", "variant", math.random(1, 3))
   animator.setAnimationState("firing", "fire")
   animator.burstParticleEmitter("muzzleFlash")
-  animator.playSound("fireLoop")
+  
 
   animator.setLightActive("muzzleFlash", true)
 end

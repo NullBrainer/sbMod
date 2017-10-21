@@ -10,7 +10,7 @@
     "fireTime" : 0.065,
     "inaccuracy" : 0.05,
 
-    "projectileCount" : 3,
+    "projectileCount": 1,
     "fireType" : "auto",
 
     "projectileType" : "standardbullet",
@@ -20,8 +20,8 @@
 
     "stances": {
       "idle": {
-        "armRotation": 45,
-        "weaponRotation": -45,
+        "armRotation": 0,
+        "weaponRotation": 45,
         "twoHanded": true,
 
         "allowRotate": true,
@@ -30,25 +30,25 @@
       "fire": {
         "duration": 0,
         "armRotation": 0,
-        "weaponRotation": 0.1,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,
         "allowFlip": true
       },
       "windup": {
-        "duration": 2,
-        "armRotation": -45,
-        "weaponRotation": 45,
+        "duration": 1,
+        "armRotation": 0,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,
         "allowFlip": true
       },
       "cooldown": {
-        "duration": 0.5,
-        "armRotation": 1,
-        "weaponRotation": 2,
+        "duration": 1,
+        "armRotation": 0,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,
