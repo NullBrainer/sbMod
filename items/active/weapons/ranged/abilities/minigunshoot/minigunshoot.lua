@@ -54,15 +54,17 @@ function MinigunAttack:fire()
 
     progress = math.min(1.0, progress + (self.dt / self.stances.windup.duration))
   end)
-  
-  animator.playSound("fireLoop")
-  while self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) do
-	self:fireProjectile()
-	self:muzzleFlash()
-	util.wait(self.stances.fire.duration)
-	coroutine.yield()
-  end
-  animator.stopAllSounds("fireLoop")	
+    if self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) then
+		animator.playSound("fireLoop",-1)
+	
+		while self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) do
+			self:fireProjectile()
+			self:muzzleFlash()
+			util.wait(self.fireTime)
+			coroutine.yield()
+		end
+			animator.stopAllSounds("fireLoop")	
+	end
   self.cooldownTimer = self.fireTime
   self:setState(self.cooldown)
 end
@@ -157,7 +159,7 @@ function MinigunAttack:aimVector(inaccuracy)
 end
 
 function MinigunAttack:energyPerShot()
-  return status.resource("energy")/200
+  return status.resource("energy")/self.energyUsage
 end
 
 function MinigunAttack:damagePerShot()

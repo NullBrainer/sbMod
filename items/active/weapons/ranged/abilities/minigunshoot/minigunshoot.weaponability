@@ -6,8 +6,8 @@
     "class" : "MinigunAttack",
 
     "baseDps" : 10,
-    "energyUsage" : 1,
-    "fireTime" : 0.065,
+    "energyUsage" : 45,
+    "fireTime" : 0.02,
     "inaccuracy" : 0.05,
 
     "projectileCount": 1,
@@ -48,7 +48,7 @@
       "cooldown": {
         "duration": 1,
         "armRotation": 0,
-        "weaponRotation": 0,
+        "weaponRotation": 0.5,
         "twoHanded": true,
 
         "allowRotate": true,
