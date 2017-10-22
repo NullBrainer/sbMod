@@ -27,17 +27,16 @@
         "allowRotate": true,
         "allowFlip": true
       },
-      "fire": {
-        "duration": 0,
+      "windup": {
+        "duration": 1,
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
         "allowRotate": true,
         "allowFlip": true
       },
-      "windup": {
-        "duration": 1,
+      "fire": {
+        "duration": 0,
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
@@ -48,7 +47,7 @@
       "cooldown": {
         "duration": 1,
         "armRotation": 0,
-        "weaponRotation": 0.5,
+        "weaponRotation": 0,
         "twoHanded": true,
 
         "allowRotate": true,

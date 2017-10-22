@@ -28,8 +28,8 @@
       "fireEnd": [ "/sfx/gun/minigun_wind_down.ogg" ]
     }
   },
-  "baseOffset": [ 0.75, 0 ],
-  "muzzleOffset": [ 2.5, 0.4 ],
+  "baseOffset": [ 1.65, -0.5 ],
+  "muzzleOffset": [ 2.4, 0.27 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
