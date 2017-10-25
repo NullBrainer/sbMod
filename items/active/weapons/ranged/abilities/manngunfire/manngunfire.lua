@@ -1,8 +1,10 @@
-require "/scripts/util.lua" 
+require "/scripts/util.lua"
 require "/scripts/interp.lua"
-MinigunAttack = WeaponAbility:new()
 
-function MinigunAttack:init()
+-- Base gun fire ability
+MannGunFire = WeaponAbility:new()
+
+function MannGunFire:init()
   self.weapon:setStance(self.stances.idle)
 
   self.cooldownTimer = self.fireTime
@@ -12,7 +14,7 @@ function MinigunAttack:init()
   end
 end
 
-function MinigunAttack:update(dt, fireMode, shiftHeld)
+function MannGunFire:update(dt, fireMode, shiftHeld)
   WeaponAbility.update(self, dt, fireMode, shiftHeld)
 
   self.cooldownTimer = math.max(0, self.cooldownTimer - self.dt)
@@ -26,52 +28,48 @@ function MinigunAttack:update(dt, fireMode, shiftHeld)
     and self.cooldownTimer == 0
     and not status.resourceLocked("energy")
     and not world.lineTileCollision(mcontroller.position(), self:firePosition()) then
-					
-    if status.overConsumeResource("energy", self:energyPerShot()) then	
-			animator.playSound("fireStart")
-			self:setState(self.windup)
-			self:setState(self.fire)			
-			
-	end
+
+    if self.fireType == "auto" and status.overConsumeResource("energy", self:energyPerShot()) then
+      self:setState(self.auto)
+    elseif self.fireType == "burst" then
+      self:setState(self.burst)
+    end
+  end
 end
-end
 
-
-
-function MinigunAttack:fire()
-
-
+function MannGunFire:auto()
   self.weapon:setStance(self.stances.fire)
 
-  local progress = 0
-  util.wait(self.stances.windup.duration, function()
-    local from = self.stances.idle.weaponOffset or {0,0}
-    local to = self.stances.fire.weaponOffset or {0,0}
-    self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
+  self:fireProjectile()
+  self:muzzleFlash()
 
-    self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.idle.weaponRotation, self.stances.fire.weaponRotation))
-    self.weapon.relativeArmRotation = util.toRadians(interp.linear(progress, self.stances.idle.armRotation, self.stances.fire.armRotation))
+  if self.stances.fire.duration then
+    util.wait(self.stances.fire.duration)
+  end
 
-    progress = math.min(1.0, progress + (self.dt / self.stances.windup.duration))
-  end)
-    if self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) then
-		animator.playSound("fireLoop",-1)
-	
-		while self.fireMode == (self.activatingFireMode or self.abilitySlot) and status.overConsumeResource("energy", (self.energyUsage or 0) * self.dt) do
-			self:fireProjectile()
-			self:muzzleFlash()
-			util.wait(self.fireTime)
-			coroutine.yield()
-		end
-			animator.stopAllSounds("fireLoop")	
-	end
   self.cooldownTimer = self.fireTime
   self:setState(self.cooldown)
 end
 
-  
+function MannGunFire:burst()
+  self.weapon:setStance(self.stances.fire)
 
-function MinigunAttack:cooldown()
+  local shots = self.burstCount
+  while shots > 0 and status.overConsumeResource("energy", self:energyPerShot()) do
+    self:fireProjectile()
+    self:muzzleFlash()
+    shots = shots - 1
+
+    self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(1 - shots / self.burstCount, 0, self.stances.fire.weaponRotation))
+    self.weapon.relativeArmRotation = util.toRadians(interp.linear(1 - shots / self.burstCount, 0, self.stances.fire.armRotation))
+
+    util.wait(self.burstTime)
+  end
+
+  self.cooldownTimer = (self.fireTime - self.burstTime) * self.burstCount
+end
+
+function MannGunFire:cooldown()
   self.weapon:setStance(self.stances.cooldown)
   self.weapon:updateAim()
 
@@ -88,36 +86,16 @@ function MinigunAttack:cooldown()
   end)
 end
 
-function MinigunAttack:windup()
-
-	self.weapon:setStance(self.stances.windup)
-	self.weapon:updateAim()
-	local progress = 0
-	
-	util.wait(self.stances.windup.duration, function()
-	local from = self.stances.windup.weaponOffset or {0,0}
-	local to = self.stances.fire.weaponOffset or {0,0}
-	self.weapon.weaponOffset = {interp.linear(progress, from[1], to[1]), interp.linear(progress, from[2], to[2])}
-
-	self.weapon.relativeWeaponRotation = util.toRadians(interp.linear(progress, self.stances.windup.weaponRotation, self.stances.fire.weaponRotation))
-	self.weapon.relativeArmRotation = util.toRadians(interp.linear(progress, self.stances.windup.armRotation, self.stances.fire.armRotation))
-	progress = math.min(1.0, progress + (self.dt / self.stances.windup.duration))
-end)
-
-end
-
-
-function MinigunAttack:muzzleFlash()
+function MannGunFire:muzzleFlash()
   animator.setPartTag("muzzleFlash", "variant", math.random(1, 3))
   animator.setAnimationState("firing", "fire")
   animator.burstParticleEmitter("muzzleFlash")
-  
+  animator.playSound("fire")
 
   animator.setLightActive("muzzleFlash", true)
 end
 
-
-function MinigunAttack:fireProjectile(projectileType, projectileParams, inaccuracy, firePosition, projectileCount)
+function MannGunFire:fireProjectile(projectileType, projectileParams, inaccuracy, firePosition, projectileCount)
   local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
   params.power = self:damagePerShot()
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
@@ -148,30 +126,23 @@ function MinigunAttack:fireProjectile(projectileType, projectileParams, inaccura
   return projectileId
 end
 
-function MinigunAttack:firePosition()
+function MannGunFire:firePosition()
   return vec2.add(mcontroller.position(), activeItem.handPosition(self.weapon.muzzleOffset))
 end
 
-function MinigunAttack:aimVector(inaccuracy)
+function MannGunFire:aimVector(inaccuracy)
   local aimVector = vec2.rotate({1, 0}, self.weapon.aimAngle + sb.nrand(inaccuracy, 0))
   aimVector[1] = aimVector[1] * mcontroller.facingDirection()
   return aimVector
 end
 
-function MinigunAttack:energyPerShot()
-	
-  return (status.resource("energy")/self.energyUsage)
+function MannGunFire:energyPerShot()
+  return status.resourceMax("energy")/self.shotsperreload
 end
 
-function MinigunAttack:damagePerShot()
+function MannGunFire:damagePerShot()
   return (self.baseDamage or (self.baseDps * self.fireTime)) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount
 end
 
-function MinigunAttack:reset()
-	animator.stopAllSounds("fireStart")
-	
-end
-
-function MinigunAttack:uninit()
-	self:reset()
+function MannGunFire:uninit()
 end

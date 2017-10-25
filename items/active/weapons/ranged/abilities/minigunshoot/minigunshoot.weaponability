@@ -5,9 +5,9 @@
     "scripts" : ["/items/active/weapons/ranged/abilities/minigunshoot/minigunshoot.lua"],
     "class" : "MinigunAttack",
 
-    "baseDps" : 10,
-    "energyUsage" : 45,
-    "fireTime" : 0.02,
+    "baseDps" : 25,
+    "energyUsage" : 50,
+    "fireTime" : 0.05,
     "inaccuracy" : 0.05,
 
     "projectileCount": 1,
