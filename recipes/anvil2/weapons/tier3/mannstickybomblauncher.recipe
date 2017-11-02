@@ -1,0 +1,19 @@
+{
+  "input" : [
+    {
+      "item": "ironbar",
+      "count" : 16
+    },
+    {
+      "item": "volatilepowder",
+      "count" : 24
+    },
+    {
+      "item": "leather",
+      "count" :  1
+    }
+
+  ],
+  "output" : { "item" : "mannstickybomblauncher", "count" : 1 },
+  "groups" : [ "craftinganvil2", "weapons", "all" ]
+}
