@@ -34,15 +34,16 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/gunfire.lua" ],
-    "class": "GunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
+    "class": "MannGunFire",
 
     "fireTime": 0.60,
     "baseDps": 40.0,
     "energyUsage": 32.0,
     "inaccuracy": 0.10,
+    "shotsperreload" :  6,
 
-    "projectileCount": 10,
+    "projectileCount": 6,
     "fireType": "auto",
 
     "projectileType": "standardbullet",

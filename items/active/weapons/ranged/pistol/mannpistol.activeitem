@@ -33,48 +33,49 @@
 
   "elementalType" : "physical",
 
-  "primaryAbility" : {
-    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
-    "class" : "GunFire",
+  "primaryAbility": {
+    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
+    "class": "MannGunFire",
 
-    "fireTime" : 0.17,
-    "baseDps" : 15,
-    "energyUsage" : 50.33,
-    "inaccuracy" : 0.025,
+    "fireTime": 0.17,
+    "baseDps": 25,
+    "shotsperreload": 12,
+    "energyUsage": 50.33,
+    "inaccuracy": 0.025,
 
-    "projectileCount" : 1,
-    "fireType" : "auto",
+    "projectileCount": 1,
+    "fireType": "auto",
 
-    "projectileType" : "standardbullet",
-    "projectileParameters" : {
-      "knockback" : 6
+    "projectileType": "standardbullet",
+    "projectileParameters": {
+      "knockback": 6
     },
-    "stances" : {
-      "idle" : {
-        "armRotation" : 0,
-        "weaponRotation" : 0,
-        "twoHanded" : false,
+    "stances": {
+      "idle": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": false,
 
-        "allowRotate" : true,
-        "allowFlip" : true
+        "allowRotate": true,
+        "allowFlip": true
       },
-      "fire" : {
-        "duration" : 0,
-        "armRotation" : 4,
-        "weaponRotation" : 4,
-        "twoHanded" : false,
+      "fire": {
+        "duration": 0,
+        "armRotation": 4,
+        "weaponRotation": 4,
+        "twoHanded": false,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       },
-      "cooldown" : {
-        "duration" : 0.15,
-        "armRotation" : 4,
-        "weaponRotation" : 4,
-        "twoHanded" : false,
+      "cooldown": {
+        "duration": 0.15,
+        "armRotation": 4,
+        "weaponRotation": 4,
+        "twoHanded": false,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       }
     }
   },

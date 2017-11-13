@@ -3,7 +3,7 @@
   "price" : 15,
   "inventoryIcon" : "mannsniperrifle.png",
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Common",
   "description" : "Used to be powered by being zoomed in.",
   "shortdescription" : "Mann Co. Sniper Rifle",
   "level" : 5,
@@ -33,13 +33,14 @@
   "elementalType" : "physical",
 
   "primaryAbility" : {
-    "scripts" : ["/items/active/weapons/ranged/gunfire.lua"],
-    "class" : "GunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
+    "class": "MannGunFire",
 
     "fireTime" : 1.55,
     "baseDps" : 9.45,
     "energyUsage" : 5,
-    "inaccuracy" : 0.0,
+    "inaccuracy": 0.0,
+    "shotsperreload" :  25,
 
     "projectileCount" : 1,
     "fireType" : "auto",
