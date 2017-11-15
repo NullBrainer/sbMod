@@ -46,7 +46,7 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "grenade",
+    "projectileType": "stockpill",
     "projectileParameters": {
       "knockback": 40
     },
