@@ -1,33 +1,33 @@
 {
-  "itemName" : "mannshotgun",
-  "price" : 5,
+  "itemName" : "mannsyringegun",
+  "price" : 350,
   "maxStack" : 1,
   "rarity" : "Common",
-  "description" : "A sawn-off shotgun.",
-  "shortdescription" : "Mann Co. Shotgun",
+  "description" : "A gun that shoots medicine.",
+  "shortdescription" : "Mann Co Syringe Gun",
   "tooltipKind" : "gun",
-  "category" : "shotgun",
+  "category" : "pistol",
   "twoHanded" : true,
-  "itemTags" : ["weapon","ranged","shotgun"],
-  "level" : 2,
+  "itemTags" : ["weapon","ranged","pistol"],
+  "level" : 1,
 
-  "inventoryIcon" : "mannshotgun.png",
+  "inventoryIcon" : "mannsyringegun.png",
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts": {
     "butt": "",
-    "middle": "mannshotgun.png",
+    "middle": "mannsyringegun.png",
     "barrel": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
     "sounds" : {
-      "fire" : ["/sfx/gun/shotgun_shoot.ogg"]
+      "fire" : ["/sfx/gun/syringegun_shoot.ogg"]
     }
   },
 
-  "baseOffset" : [0.9, 0.05],
-  "muzzleOffset" : [2, 0.125],
+  "baseOffset" : [0.7, 0.05],
+  "muzzleOffset" : [1.08, -0.18],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
@@ -37,19 +37,18 @@
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime": 0.69,
-    "baseDps": 50.0,
-    "energyUsage": 25.0,
-    "inaccuracy": 0.04,
-    "shotsperreload" :  5.5,
+    "fireTime": 0.1,
+    "baseDps": 25,
+    "shotsperreload": 50,
+    "energyUsage": 50.33,
+    "inaccuracy": 0.025,
 
-    "projectileCount": 6,
+    "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "syringe",
     "projectileParameters": {
-      "damageKind": "shotgunbullet",
-      "knockback": 25
+      "knockback": 3
     },
     "stances": {
       "idle": {
@@ -62,17 +61,17 @@
       },
       "fire": {
         "duration": 0,
-        "armRotation": 8,
-        "weaponRotation": 8,
+        "armRotation": 1,
+        "weaponRotation": 1,
         "twoHanded": true,
 
         "allowRotate": false,
         "allowFlip": false
       },
       "cooldown": {
-        "duration": 0.15,
-        "armRotation": 8,
-        "weaponRotation": 8,
+        "duration": 0.05,
+        "armRotation": 1,
+        "weaponRotation": 1,
         "twoHanded": true,
 
         "allowRotate": false,

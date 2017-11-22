@@ -25,8 +25,8 @@
       "fire": [ "/sfx/gun/grenade_launcher_shoot.ogg" ]
     }
   },
-  "baseOffset": [ 0.0, 0.0 ],
-  "muzzleOffset": [ 0.0, 0.125 ],
+  "baseOffset": [ 0.3, 0.0 ],
+  "muzzleOffset": [ 1.5, 0.125 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
@@ -36,8 +36,8 @@
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime": 0.75,
-    "baseDps": 25,
+    "fireTime": 0.7,
+    "baseDps": 60,
     "energyUsage": 25,
     "shotsperreload": 4,
     "energypershot": 23,

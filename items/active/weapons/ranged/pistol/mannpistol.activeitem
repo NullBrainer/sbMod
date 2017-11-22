@@ -26,8 +26,8 @@
     }
   },
 
-  "baseOffset" : [0.01, 0.0],
-  "muzzleOffset" : [1.4, 0.3],
+  "baseOffset" : [-0.0, 0.3],
+  "muzzleOffset" : [1.0, 0.3],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
@@ -38,7 +38,7 @@
     "class": "MannGunFire",
 
     "fireTime": 0.17,
-    "baseDps": 25,
+    "baseDps": 15,
     "shotsperreload": 12,
     "energyUsage": 50.33,
     "inaccuracy": 0.025,

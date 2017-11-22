@@ -3,7 +3,7 @@
   "level" : 3,
   "price" : 30,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Common",
   "description" : "A mercenary's favorite hippy burner.",
   "shortdescription" : "Mann Co. Flamethrower",
   "tooltipKind" : "gun",
@@ -36,7 +36,7 @@
 
   "primaryAbilityType" : "flamethrower",
   "primaryAbility" : {
-    "baseDps" : 30,
+    "baseDps" : 20,
     "energyUsage" : 15
   },
 

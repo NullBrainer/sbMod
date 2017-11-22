@@ -40,8 +40,8 @@
     "fireTime": 0.60,
     "baseDps": 40.0,
     "energyUsage": 32.0,
-    "inaccuracy": 0.10,
-    "shotsperreload" :  6,
+    "inaccuracy": 0.05,
+    "shotsperreload" :  5.5,
 
     "projectileCount": 6,
     "fireType": "auto",

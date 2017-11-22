@@ -41,7 +41,7 @@
     "baseDps" : 40,
     "energyUsage" : 33.75,
     "inaccuracy": 0.025,
-    "shotsperreload" :  6,
+    "shotsperreload" :  5.5,
 
     "projectileCount" : 1,
     "fireType" : "auto",
@@ -61,8 +61,8 @@
       },
       "fire" : {
         "duration" : 0,
-        "armRotation" : 4,
-        "weaponRotation" : 4,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
         "twoHanded" : false,
 
         "allowRotate" : false,
@@ -70,8 +70,8 @@
       },
       "cooldown" : {
         "duration" : 0.15,
-        "armRotation" : 4,
-        "weaponRotation" : 4,
+        "armRotation" : 3,
+        "weaponRotation" : 3,
         "twoHanded" : false,
 
         "allowRotate" : false,

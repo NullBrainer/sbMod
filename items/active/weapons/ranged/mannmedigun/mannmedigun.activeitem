@@ -25,7 +25,7 @@
       "noTarget": [ "/sfx/gun/medigun_no_target.ogg" ]
     }
   },
-  "muzzleOffset": [ 1.5625, 0.375 ],
+  "muzzleOffset": [ 2.0, 0.27 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
