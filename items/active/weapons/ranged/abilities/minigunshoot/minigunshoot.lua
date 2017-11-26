@@ -66,6 +66,7 @@ function MinigunAttack:fire()
 			animator.stopAllSounds("fireLoop")	
 	end
   self.cooldownTimer = self.fireTime
+  animator.playSound("fireEnd")
   self:setState(self.cooldown)
 end
 
