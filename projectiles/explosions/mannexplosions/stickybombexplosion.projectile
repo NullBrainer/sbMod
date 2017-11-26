@@ -1,8 +1,10 @@
 {
   "projectileName" : "stickybombesxplosion",
-   "speed" : 0,
+  "speed": 0,
+   "lightColor" : [255, 255, 128],
+  "pointLight" : true,
   "damagePoly" : [ [-27, 0], [-18, -18], [0, -27], [18, -18], [27, 0], [18, 18], [0, 27], [-18, 18] ],
-  "animationLoops" : false,
+  "animationLoops": false,
   "piercing" : true,
   "bounces" : -1,
   "flippable" : true,
