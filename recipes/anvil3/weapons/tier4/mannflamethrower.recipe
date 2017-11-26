@@ -1,0 +1,18 @@
+{
+  "input": [
+    {
+      "item": "ironbar",
+      "count": 20
+    },
+    {
+      "item": "liquidoil",
+      "count": 200
+    },
+    {
+      "item": "wire",
+      "count": 4
+    }
+  ],
+  "output" : { "item" : "mannflamethrower", "count" : 1 },
+  "groups" : [ "craftinganvil3", "weapons", "all" ]
+}

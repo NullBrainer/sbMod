@@ -1,0 +1,18 @@
+{
+  "input" : [
+    {
+      "item": "ironbar",
+      "count": 6
+    },
+    {
+      "item": "glass",
+      "count": 8
+    }
+  ],
+  "output": {
+    "item": "mannsyringegun",
+    "count": 1
+  },
+  "groups": [ "craftinganvil3", "weapons", "all" ]
+
+}

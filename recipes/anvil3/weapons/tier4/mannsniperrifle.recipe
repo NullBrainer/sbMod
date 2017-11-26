@@ -1,0 +1,28 @@
+{
+  "input" : [
+    {
+      "item": "ironbar",
+      "count": 24
+    },
+    {
+      "item": "logblock",
+      "count": 1
+    },
+    {
+      "item": "wire",
+      "count": 4
+    },
+    {
+      "item": "glass",
+      "count": 8
+    },
+    {
+      "item": "smallbattery",
+      "count" :  2
+    }
+
+
+  ],
+  "output" : { "item" : "mannsniperrifle", "count" : 1 },
+  "groups" : [ "craftinganvil3", "weapons", "all" ]
+}

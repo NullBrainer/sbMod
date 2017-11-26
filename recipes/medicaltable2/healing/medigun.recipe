@@ -1,0 +1,30 @@
+{
+  "input" : [
+    {
+      "item": "ironbar",
+      "count": 10
+    },
+    {
+      "item": "battery",
+      "count": 1
+    },
+    {
+      "item": "wire",
+      "count": 4
+    },
+    {
+      "item": "liquidhealing",
+      "count": 200
+    },
+    {
+      "item": "petalred",
+      "count": 3
+    }
+  ],
+  "output": {
+    "item": "mannmedigun",
+    "count": 1
+  },
+  "groups": [ "craftingmedical2", "healing" ]
+
+}

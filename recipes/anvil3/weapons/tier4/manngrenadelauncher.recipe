@@ -1,0 +1,22 @@
+{
+  "input" : [
+    {
+      "item": "ironbar",
+      "count": 24
+    },
+    {
+      "item": "volatilepowder",
+      "count": 24
+    },
+    {
+      "item": "logblock",
+      "count" :  1
+    }
+
+  ],
+  "output": {
+    "item": "manngrenadelauncher",
+    "count": 1
+  },
+  "groups" : [ "craftinganvil3", "weapons", "all" ]
+}
