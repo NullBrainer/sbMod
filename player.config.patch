@@ -41,6 +41,16 @@
 },
 {
 "op":"add","path":"/defaultBlueprints/tier1/-",
-"value":{"item":"mannsnperrifle"}
+"value":{"item":"mannsniperrifle"}
+},
+{
+"op":"add","path":"/defaultBlueprints/tier1/-",
+"value":{"item":"mannrocketlauncher"}
+},
+{
+"op":"add","path":"/defaultBlueprints/tier1/-",
+"value":{"item":"mannsyringegun"}
 }
+
+
 ]

@@ -36,8 +36,8 @@
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime" : 1.55,
-    "baseDps" : 9.45,
+    "fireTime" : 1.5,
+    "baseDps" : 33.33,
     "energyUsage" : 5,
     "inaccuracy": 0.0,
     "shotsperreload" :  25,

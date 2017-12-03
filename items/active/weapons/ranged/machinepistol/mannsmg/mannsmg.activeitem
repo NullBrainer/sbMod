@@ -38,7 +38,7 @@
     "class" : "MannGunFire",
 
     "fireTime" : 0.1,
-    "baseDps" : 8,
+    "baseDps" : 80,
     "shotsperreload" : 25,
     "inaccuracy" : 0.02,
 

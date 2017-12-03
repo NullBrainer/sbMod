@@ -121,7 +121,7 @@ end
 function MinigunAttack:fireProjectile(projectileType, projectileParams, inaccuracy, firePosition, projectileCount)
   local params = sb.jsonMerge(self.projectileParameters, projectileParams or {})
   params.power = self:damagePerShot()
-  params.powerMultiplier = activeItem.ownerPowerMultiplier()
+  params.powerMultiplier = 1
   params.speed = util.randomInRange(params.speed)
 
   if not projectileType then
@@ -165,7 +165,7 @@ function MinigunAttack:energyPerShot()
 end
 
 function MinigunAttack:damagePerShot()
-  return (self.baseDamage or (self.baseDps * self.fireTime)) * (self.baseDamageMultiplier or 1.0) * config.getParameter("damageLevelMultiplier") / self.projectileCount
+  return (self.baseDamage or (self.baseDps * self.fireTime)) / self.projectileCount
 end
 
 function MinigunAttack:reset()

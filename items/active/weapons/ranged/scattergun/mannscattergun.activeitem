@@ -37,13 +37,13 @@
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime": 0.60,
-    "baseDps": 40.0,
+    "fireTime": 0.625,
+    "baseDps": 96,
     "energyUsage": 32.0,
     "inaccuracy": 0.05,
     "shotsperreload" :  5.5,
 
-    "projectileCount": 6,
+    "projectileCount": 10,
     "fireType": "auto",
 
     "projectileType": "standardbullet",

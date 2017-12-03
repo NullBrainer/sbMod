@@ -5,9 +5,9 @@
     "scripts" : ["/items/active/weapons/ranged/abilities/minigunshoot/minigunshoot.lua"],
     "class" : "MinigunAttack",
 
-    "baseDps" : 25,
-    "energyUsage" : 50,
-    "fireTime" : 0.05,
+    "baseDps" : 300,
+    "energyUsage" : 20,
+    "fireTime" : 0.03,
     "inaccuracy" : 0.05,
 
     "projectileCount": 1,
@@ -28,7 +28,7 @@
         "allowFlip": true
       },
       "windup": {
-        "duration": 1,
+        "duration": 0.87,
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,

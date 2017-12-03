@@ -4,7 +4,7 @@ function init()
   -- scale damage and calculate energy cost
   self.pType = config.getParameter("projectileType")
   self.pParams = config.getParameter("projectileParameters", {})
-  self.pParams.power = self.pParams.power * root.evalFunction("weaponDamageLevelMultiplier", config.getParameter("level", 1))
+  self.pParams.power = self.pParams.power
   self.energyPerShot = config.getParameter("energyUsage")
 
   self.fireOffset = config.getParameter("fireOffset")
@@ -59,7 +59,7 @@ function uninit()
 end
 
 function fire()
-  self.pParams.powerMultiplier = activeItem.ownerPowerMultiplier()
+  self.pParams.powerMultiplier = 1
   local projectileId = world.spawnProjectile(
       self.pType,
       firePosition(),
