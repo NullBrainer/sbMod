@@ -8,7 +8,7 @@
   "winddownFrames" : 3,
   "intangibleWinddown" : true,
   "power" : 50,
-  "speed" : 25,
+  "speed" : 50,
   "timeToLive" : 0.5,
   "bounces" : 3,
   "piercing" : true,
@@ -17,8 +17,8 @@
   "damageKind" : "flamethrower",
   "damageKindImage" : "/interface/statuses/fire.png",
   "statusEffects" : [
-    {"effect" : "burning",
-    "duration" : 5}
+    {"effect" : "mannburning",
+    "duration" : 10}
   ],
   "hydrophobic" : true
 }

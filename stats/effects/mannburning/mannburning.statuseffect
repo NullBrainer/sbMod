@@ -1,0 +1,16 @@
+{
+  "name" : "mannburning",
+  "blockingStat" : "fireStatusImmunity",
+
+  "effectConfig" : {},
+  "defaultDuration" : 10,
+
+  "scripts" : [
+    "mannburning.lua"
+  ],
+
+  "animationConfig" : "mannburning.animation",
+
+  "label" : "OnFire",
+  "icon" : "/interface/statuses/fire.png"
+}
