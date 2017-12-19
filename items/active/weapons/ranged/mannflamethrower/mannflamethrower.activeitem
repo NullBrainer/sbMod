@@ -32,7 +32,7 @@
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
-  "elementaType" :  "fire",
+  "elementaType": "fire",
   "primaryAbility": {
     "name": "MannFlamethrower",
     "type": "mannflamethrowershoot",
@@ -83,35 +83,8 @@
   },
 
 
-  "altAbility": {
-    "name": "Compression Blast",
-    "type": "compressionblast",
-    "scripts": [ "/items/active/weapons/ranged/abilities/compressionblast/compressionblast.lua" ],
-    "class": "CompressionBlast",
+  "altAbilityType": "compressionblast",
+  "altAbility": {},
 
-    "energyUsage": 10.0,
-    "cooldownTime": 0.6,
-    "damageConfig": {
-      "baseDamage": 0,
-      "damageSourceKind": "standardbullet",
-      "knockback": 50,
-      "knockbackMode": "aim",
-      "timeout": 0.5,
-      "timeoutGroup": "alt"
-    },
-
-    "stances": {
-      "fire": {
-        "duration": 0.20,
-        "armRotation": 0,
-        "weaponRotation": 0,
-        "twoHanded": true,
-
-        "allowRotate": false,
-        "allowFlip": false
-      }
-    }
-  },
-
-    "builder": "/items/buildscripts/buildunrandweapon.lua"
-  }
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
+}
