@@ -9,7 +9,7 @@
     "energyUsage" : 20,
     "fireTime" : 0.04,
     "inaccuracy" : 0.05,
-
+    
     "projectileCount" : 1,
     "fireType" : "auto",
 

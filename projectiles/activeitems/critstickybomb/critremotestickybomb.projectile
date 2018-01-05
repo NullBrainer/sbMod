@@ -1,0 +1,25 @@
+{
+  "projectileName" : "critremotestickybomb",
+  "physics" : "stickygrenade",
+  "bounces" : -1,
+  "damageKindImage" : "icon.png",
+  "pointLight" : true,
+  "lightColor" : [255, 0, 0],
+  "image" : "critremotestickybomb.png",
+  "animationCycle" : 0.75,
+  "frameNumber" : 4,
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/mannexplosions/manncritstockexplosion.config"
+    }
+  ],
+  "power" : 50,
+  "damageType" : "NoDamage",
+  "damageKind" : "manncritical",
+  "onlyHitTerrain" : true,
+
+  "timeToLive" : 8,
+
+  "scripts" : [ "critremotestickybomb.lua" ]
+}

@@ -24,6 +24,7 @@
     "sounds": {
       "fireStart": [ "/sfx/gun/flame_thrower_start.ogg" ],
       "fireLoop": [ "/sfx/gun/flame_thrower_loop.ogg" ],
+      "critfireLoop": [ "/sfx/gun/flame_thrower_loop_crit.ogg" ],
       "fireEnd": [ "/sfx/gun/flame_thrower_end.ogg" ]
     }
   },
@@ -43,12 +44,17 @@
     "energyUsage": 20,
     "fireTime": 0.04,
     "inaccuracy": 0.05,
-
+    "timedCrits": true,
+    "critChance": 2.5,
     "projectileCount": 1,
     "fireType": "auto",
 
     "projectileType": "mannflamethrower",
     "projectileParameters": {
+      "power": 120
+    },
+    "critProjectile": "critmannflamethrower",
+    "critprojectileParameters": {
       "power": 120
     },
 

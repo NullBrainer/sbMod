@@ -11,10 +11,11 @@
     }
   },
 
-  
 
-  "sounds" : {
-    "fire" : [ "/sfx/gun/stickybomblauncher_shoot.ogg" ],
-    "trigger" : [ "/sfx/interface/stickybomblauncher_det.ogg" ]
+
+  "sounds": {
+    "fire": [ "/sfx/gun/stickybomblauncher_shoot.ogg" ],
+    "critfire": [ "/sfx/gun/stickybomblauncher_shoot_crit.ogg" ],
+    "trigger": [ "/sfx/interface/stickybomblauncher_det.ogg" ]
   }
 }

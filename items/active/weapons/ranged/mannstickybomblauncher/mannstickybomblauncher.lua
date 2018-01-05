@@ -6,7 +6,8 @@ function init()
   self.pParams = config.getParameter("projectileParameters", {})
   self.pParams.power = self.pParams.power
   self.energyPerShot = config.getParameter("energyUsage")
-
+  self.critChance = config.getParameter("critChance")
+  self.critChance = self.critChance/100.00
   self.fireOffset = config.getParameter("fireOffset")
   updateAim()
 
@@ -15,6 +16,11 @@ function init()
 
   storage.activeProjectiles = storage.activeProjectiles or {}
   updateCursor()
+end
+
+function updatecritChance()
+local critvalue = math.random()
+CritActive = (critvalue < self.critChance)
 end
 
 function activate(fireMode, shiftHeld)
@@ -35,6 +41,7 @@ function update(dt, fireMode, shiftHeld)
       and status.overConsumeResource("energy", self.energyPerShot) then
 
     storage.fireTimer = config.getParameter("fireTime", 1.0)
+	updatecritChance()
     fire()
   end
 
@@ -59,8 +66,17 @@ function uninit()
 end
 
 function fire()
+  
+  if CritActive then
+  self.pType = config.getParameter("critProjectile")
+  self.pParams = config.getParameter("critprojectileParameters")
+  self.pParams.powerMultiplier = 3
+  else
+  self.pType = config.getParameter("projectileType")
+  self.pParams = config.getParameter("projectileParameters", {})
   self.pParams.powerMultiplier = 1
-  local projectileId = world.spawnProjectile(
+  end
+  local projectileId = world.spawnProjectile(  
       self.pType,
       firePosition(),
       activeItem.ownerEntityId(),
@@ -73,7 +89,11 @@ function fire()
     triggerSingularProjectile()
 
   end
+  if CritActive then
+  animator.playSound("critfire")
+  else
   animator.playSound("fire")
+  end
   self.recoilTimer = config.getParameter("recoilTime", 0.12)
 end
 

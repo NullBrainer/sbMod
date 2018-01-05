@@ -21,8 +21,9 @@
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fire" : ["/sfx/gun/syringegun_shoot.ogg"]
+    "sounds": {
+      "fire": [ "/sfx/gun/syringegun_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/syringegun_shoot_crit.ogg" ]
     }
   },
 
@@ -42,12 +43,19 @@
     "shotsperreload": 50,
     "energyUsage": 50.33,
     "inaccuracy": 0.025,
+    "critChance": 2.5,
+    "timedCrits": true,
 
     "projectileCount": 1,
     "fireType": "auto",
 
     "projectileType": "syringe",
     "projectileParameters": {
+      "knockback": 3
+    },
+    "critProjectile": "critsyringe",
+    "critprojectileParameters": {
+      "damageKind": "manncritical",
       "knockback": 3
     },
     "stances": {

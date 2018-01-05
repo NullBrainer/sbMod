@@ -1,0 +1,26 @@
+{
+  "projectileName" : "manncritstockexplosion",
+  "image": "mannstockexplosion.png",
+  "animationCycle": 0.2,
+  "animationLoops" : false,
+  "pointLight" : true,
+  "frameNumber" : 6,
+  "speed": 0,
+  "lightColor" : [255, 255, 128],
+  "damagePoly" : [ [-27, 0], [-18, -18], [0, -27], [18, -18], [27, 0], [18, 18], [0, 27], [-18, 18] ],
+  "piercing" : true,
+  "bounces" : -1,
+  "flippable": true,
+  "physicsForces" : {
+    "vacuum" : {
+      "type" : "RadialForceRegion",
+      "outerRadius" : 6.8,
+      "innerRadius" : 0,
+      "targetRadialVelocity" : 100,
+      "controlForce" : 5000,
+      "categoryWhitelist" : ["monster", "player"]
+    }
+  },
+  "damageKind": "manncritical",
+  "damageType": "ignoresdef"
+}

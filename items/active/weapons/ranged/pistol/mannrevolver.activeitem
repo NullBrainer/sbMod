@@ -21,8 +21,9 @@
     "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fire" : ["/sfx/gun/revolver_shoot.ogg"]
+    "sounds": {
+      "fire": [ "/sfx/gun/revolver_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/revolver_shoot_crit.ogg" ]
     }
   },
 
@@ -33,49 +34,55 @@
 
   "elementalType" : "physical",
 
-  "primaryAbility" : {
+  "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class" : "MannGunFire",
+    "class": "MannGunFire",
 
-    "fireTime" : 0.58,
-    "baseDps" : 69,
-    "energyUsage" : 69,
-    "inaccuracy": 0.025,
-    "shotsperreload" :  5.5,
+    "fireTime": 0.48,
+    "baseDps": 83.3,
+    "energyUsage": 69,
+    "inaccuracy": 0.015,
+    "shotsperreload": 5.5,
+    "critChance": 2.5,
 
-    "projectileCount" : 1,
-    "fireType" : "auto",
+    "projectileCount": 1,
+    "fireType": "auto",
 
-    "projectileType" : "standardbullet",
-    "projectileParameters" : {
-      "knockback" : 6
+    "projectileType": "standardbullet",
+    "projectileParameters": {
+      "knockback": 6
     },
-    "stances" : {
-      "idle" : {
-        "armRotation" : 0,
-        "weaponRotation" : 0,
-        "twoHanded" : false,
+    "critProjectile": "critbullet",
+    "critprojectileParameters": {
+      "damageKind": "manncritical",
+      "knockback": 6
+    },
+    "stances": {
+      "idle": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": false,
 
-        "allowRotate" : true,
-        "allowFlip" : true
+        "allowRotate": true,
+        "allowFlip": true
       },
-      "fire" : {
-        "duration" : 0,
-        "armRotation" : 3,
-        "weaponRotation" : 3,
-        "twoHanded" : false,
+      "fire": {
+        "duration": 0,
+        "armRotation": 3,
+        "weaponRotation": 10,
+        "twoHanded": false,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       },
-      "cooldown" : {
-        "duration" : 0.15,
-        "armRotation" : 3,
-        "weaponRotation" : 3,
-        "twoHanded" : false,
+      "cooldown": {
+        "duration": 0.15,
+        "armRotation": 3,
+        "weaponRotation": 10,
+        "twoHanded": false,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       }
     }
   },

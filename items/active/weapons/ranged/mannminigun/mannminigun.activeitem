@@ -25,6 +25,7 @@
       "fireStart": [ "/sfx/gun/minigun_wind_up.ogg" ],
       "spinStart": [ "/sfx/gun/minigun_spin.ogg" ],
       "fireLoop": [ "/sfx/gun/minigun_shoot.ogg" ],
+      "critfireLoop": [ "/sfx/gun/minigun_shoot_crit.ogg" ],
       "fireEnd": [ "/sfx/gun/minigun_wind_down.ogg" ]
     }
   },

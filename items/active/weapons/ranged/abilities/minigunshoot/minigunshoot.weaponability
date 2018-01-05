@@ -1,22 +1,28 @@
 {
-  "ability" : {
-    "name" : "Minigun",
-    "type" : "minigunshoot",
-    "scripts" : ["/items/active/weapons/ranged/abilities/minigunshoot/minigunshoot.lua"],
-    "class" : "MinigunAttack",
+  "ability": {
+    "name": "Minigun",
+    "type": "minigunshoot",
+    "scripts": [ "/items/active/weapons/ranged/abilities/minigunshoot/minigunshoot.lua" ],
+    "class": "MinigunAttack",
 
-    "baseDps" : 300,
-    "energyUsage" : 20,
-    "fireTime" : 0.03,
-    "inaccuracy" : 0.05,
-
+    "baseDps": 300,
+    "energyUsage": 20,
+    "fireTime": 0.03,
+    "inaccuracy": 0.05,
+    "timedCrits": true,
+    "critChance": 2.5,
     "projectileCount": 1,
-    "fireType" : "auto",
+    "fireType": "auto",
 
-    "projectileType" : "standardbullet",
-    "projectileParameters" : {
-      "knockbackRange": [3,7]
-	},
+    "projectileType": "standardbullet",
+    "projectileParameters": {
+      "knockbackRange": [ 3, 7 ]
+    },
+    "critProjectile": "critbullet",
+    "critprojectileParameters": {
+      "knockbackRange": [ 5, 10 ],
+      "damageKind": "manncritical"
+    },
 
     "stances": {
       "idle": {

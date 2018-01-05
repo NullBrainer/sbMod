@@ -22,7 +22,8 @@
   },
   "animationCustom": {
     "sounds": {
-      "fire": [ "/sfx/gun/grenade_launcher_shoot.ogg" ]
+      "fire": [ "/sfx/gun/grenade_launcher_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/grenade_launcher_shoot_crit.ogg" ]
     }
   },
   "baseOffset": [ 0.3, 0.0 ],
@@ -42,13 +43,20 @@
     "shotsperreload": 4,
     "energypershot": 23,
     "inaccuracy": 0.0,
-    
+    "critChance": 2.5,
+
+
     "projectileCount": 1,
     "fireType": "auto",
 
     "projectileType": "stockpill",
     "projectileParameters": {
       "knockback": 40
+    },
+    "critProjectile": "critstockpill",
+    "critprojectileParameters": {
+      "knockback": 40,
+      "damageKind": "manncritical"
     },
 
     "stances": {

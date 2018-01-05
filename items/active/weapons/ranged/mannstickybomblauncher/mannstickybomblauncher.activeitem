@@ -1,31 +1,38 @@
 {
-  "itemName" : "mannstickybomblauncher",
+  "itemName": "mannstickybomblauncher",
   "price": 1500,
-  "level" : 6,
-  "maxStack" : 1,
-  "rarity" : "Common",
-  "description" : "Launches sticky bombs than explode remotely",
-  "shortdescription" : "Sticky Bomb Launcher",
-  "tooltipKind" : "base",
-  "category" : "grenadeLauncher",
-  "twoHanded" : true,
-  "itemTags" : ["weapon"],
+  "level": 6,
+  "maxStack": 1,
+  "rarity": "Common",
+  "description": "Launches sticky bombs than explode remotely",
+  "shortdescription": "Sticky Bomb Launcher",
+  "tooltipKind": "base",
+  "category": "grenadeLauncher",
+  "twoHanded": true,
+  "itemTags": [ "weapon" ],
 
-  "inventoryIcon" : "mannstickybomblauncher.png",
-  "animation" : "mannstickybomblauncher.animation",
-  "animationParts" : {
-    "gun" : "mannstickybomblauncher.png"
+  "inventoryIcon": "mannstickybomblauncher.png",
+  "animation": "mannstickybomblauncher.animation",
+  "animationParts": {
+    "gun": "mannstickybomblauncher.png"
   },
-  "animationCustom" : { },
-  "scripts" : ["mannstickybomblauncher.lua"],
-  "fireOffset" : [3.10, 0.625],
-  "fireTime" : 0.67,
-  "inaccuracy" : 0.02,
+  "animationCustom": {},
+  "scripts": [ "mannstickybomblauncher.lua" ],
+  "fireOffset": [ 3.10, 0.625 ],
+  "fireTime": 0.67,
+  "inaccuracy": 0.02,
+  "critChance": 2.5,
 
-  "projectileType" : "remotestickybomb",
-  "projectileParameters" : {
-    "power" : 120,
-    "timeToLive" : 8
+  "projectileType": "remotestickybomb",
+  "projectileParameters": {
+    "power": 120,
+    "timeToLive": 8
   },
-  "energyUsage" : 13
+  "critProjectile": "critremotestickybomb",
+  "critprojectileParameters": {
+    "power": 120,
+    "timeToLive": 8,
+    "damageKind": "manncritical"
+  },
+  "energyUsage": 13
 }

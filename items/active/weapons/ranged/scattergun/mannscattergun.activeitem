@@ -21,8 +21,9 @@
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fire" : ["/sfx/gun/scatter_gun_shoot.ogg"]
+    "sounds": {
+      "fire": [ "/sfx/gun/scatter_gun_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/scatter_gun_shoot_crit.ogg" ]
     }
   },
 
@@ -41,7 +42,9 @@
     "baseDps": 96,
     "energyUsage": 32.0,
     "inaccuracy": 0.05,
-    "shotsperreload" :  5.5,
+    "shotsperreload": 5.5,
+    "critChance": 2.5,
+
 
     "projectileCount": 10,
     "fireType": "auto",
@@ -49,6 +52,11 @@
     "projectileType": "standardbullet",
     "projectileParameters": {
       "damageKind": "shotgunbullet",
+        "knockback": 25
+    },
+    "critProjectile": "critbullet",
+    "critprojectileParameters": {
+      "damageKind": "manncritical",
       "knockback": 25
     },
     "stances": {

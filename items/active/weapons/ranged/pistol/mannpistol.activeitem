@@ -21,8 +21,9 @@
     "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fire" : ["/sfx/gun/pistol_shoot.ogg"]
+    "sounds": {
+      "fire": [ "/sfx/gun/pistol_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/pistol_shoot_crit.ogg" ]
     }
   },
 
@@ -37,17 +38,23 @@
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime": 0.17,
-    "baseDps": 88.23,
+    "fireTime": 0.02,
+    "baseDps": 750,
     "shotsperreload": 12,
     "energyUsage": 50.33,
     "inaccuracy": 0.025,
-
+    "critChance": 2.5,
+    "timedCrits": true,
     "projectileCount": 1,
     "fireType": "auto",
 
     "projectileType": "standardbullet",
     "projectileParameters": {
+      "knockback": 6
+    },
+    "critProjectile": "critbullet",
+    "critprojectileParameters": {
+      "damageKind": "manncritical",
       "knockback": 6
     },
     "stances": {
@@ -62,7 +69,7 @@
       "fire": {
         "duration": 0,
         "armRotation": 4,
-        "weaponRotation": 4,
+        "weaponRotation": 7,
         "twoHanded": false,
 
         "allowRotate": false,
@@ -71,7 +78,7 @@
       "cooldown": {
         "duration": 0.15,
         "armRotation": 4,
-        "weaponRotation": 4,
+        "weaponRotation": 7,
         "twoHanded": false,
 
         "allowRotate": false,

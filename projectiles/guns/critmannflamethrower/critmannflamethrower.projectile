@@ -1,0 +1,25 @@
+{
+  "projectileName" : "critmannflamethrower",
+  "image" : "critmannflamethrower.png",
+  "physics" : "flame",
+  "animationCycle" : 1,
+  "animationLoops" : false,
+  "frameNumber" : 12,
+  "winddownFrames" : 3,
+  "intangibleWinddown" : true,
+  "power" : 50,
+  "speed" : 45,
+  "timeToLive" : 0.85,
+  "bounces" : 3,
+  "piercing" : true,
+  "damagePoly" : [ [-9, 0], [-6, -6], [0, -9], [6, -6], [9, 0], [6, 6], [0, 9], [-6, 6] ],
+  "lightColor" : [235, 126, 2],
+  "damageKind": "manncritical",
+  "damageType": "ignoresdef",
+  "damageKindImage" : "/interface/statuses/fire.png",
+  "statusEffects" : [
+    {"effect" : "mannburning",
+    "duration" : 10}
+  ],
+  "hydrophobic" : true
+}

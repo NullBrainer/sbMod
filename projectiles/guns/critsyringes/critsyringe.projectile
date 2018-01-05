@@ -1,0 +1,24 @@
+{
+  "projectileName" : "critsyringe",
+  "physics" : "arrow",
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/gun/impact_arrow.ogg"
+      ]
+    }
+  ],
+  "image" : "critsyringe.png",
+  "animationCycle" : 0.25,
+  "frameNumber" : 2,
+  "damageKind": "manncritical",
+  "damageType": "ignoresdef",
+  "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
+  "timeToLive" : 10,
+  "pointLight" : false,
+  "power" : 5.0,
+  "knockback" : 20,
+  "knockbackDirectional" : true,
+  "speed" : 100
+}

@@ -1,0 +1,19 @@
+{
+  "projectileName": "critstockpill",
+  "physics": "grenade",
+  "bounces": -1,
+  "timeToLive": 3,
+  "damageKindImage": "icon.png",
+  "image": "critstockpill.png",
+  "animationCycle": 0.5,
+  "frameNumber": 2,
+  "actionOnReap": [
+    {
+      "action": "config",
+      "file": "/projectiles/explosions/mannexplosions/manncritstockexplosion.config"
+    }
+  ],
+  "power": 50,
+  "damageType": "NoDamage",
+  "damageKind": "default"
+}
