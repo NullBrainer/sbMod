@@ -10,7 +10,7 @@ function MannGunFire:init()
   self.weapon:setStance(self.stances.idle)
 
   self.cooldownTimer = self.fireTime
-  critChance = self.critChance/100.00	
+  critChance = self.critChance/100.00
   timedCrits = self.timedCrits or false
   self.threadState = coroutine.create(critfunction)
 

@@ -20,8 +20,10 @@
     "muzzleFlash" : "/items/active/weapons/ranged/muzzleflash.png"
   },
   "animationCustom" : {
-    "sounds" : {
-      "fire" : [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot.ogg" ]
+    "sounds": {
+      "fire": [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot_crit.ogg" ],
+      "charged": ["/sfx/interface/recharged.ogg"]
     }
   },
 
@@ -32,52 +34,55 @@
 
   "elementalType" : "physical",
 
-  "primaryAbility" : {
+  "primaryAbility": {
     "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
     "class": "MannGunFire",
 
-    "fireTime" : 1.5,
-    "baseDps" : 33.33,
-    "energyUsage" : 5,
+    "fireTime": 1.55,
+    "baseDps": 32.26,
+    "energyUsage": 50,
     "inaccuracy": 0.0,
-    "shotsperreload" :  25,
 
-    "projectileCount" : 1,
-    "fireType" : "auto",
+    "shotsperreload": 24.5,
+    "critChance": 0,
+    "projectileCount": 1,
+    "fireType": "auto",
 
-    "projectileType" : "standardbullet",
-    "projectileParameters" : {
-      "knockback" : 20
+    "projectileType": "standardbullet",
+    "projectileParameters": {
+      "knockback": 20
     },
-    "stances" : {
-      "idle" : {
-        "armRotation" : 0,
-        "weaponRotation" : 0,
-        "twoHanded" : true,
+    "stances": {
+      "idle": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
 
-        "allowRotate" : true,
-        "allowFlip" : true
+        "allowRotate": true,
+        "allowFlip": true
       },
-      "fire" : {
-        "duration" : 0,
-        "armRotation" : 5,
-        "weaponRotation" : 5,
-        "twoHanded" : true,
+      "fire": {
+        "duration": 0,
+        "armRotation": 5,
+        "weaponRotation": 5,
+        "twoHanded": true,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       },
-      "cooldown" : {
-        "duration" : 0.25,
-        "armRotation" : 8,
-        "weaponRotation" : 8,
-        "twoHanded" : true,
+      "cooldown": {
+        "duration": 0.25,
+        "armRotation": 8,
+        "weaponRotation": 8,
+        "twoHanded": true,
 
-        "allowRotate" : false,
-        "allowFlip" : false
+        "allowRotate": false,
+        "allowFlip": false
       }
     }
   },
+  "altAbilityType": "mannzoom",
+  "altAbility": {},
 
 
   "builder" : "/items/buildscripts/buildunrandweapon.lua"
