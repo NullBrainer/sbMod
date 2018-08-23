@@ -11,7 +11,7 @@
   "itemTags" : ["weapon","ranged","pistol"],
   "level" : 1,
 
-  "inventoryIcon" : "mannrevolvericon.png",
+  "inventoryIcon" : "mannrevolver.png",
 
   "animation" : "/items/active/weapons/ranged/gun.animation",
   "animationParts" : {
