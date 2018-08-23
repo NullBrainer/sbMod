@@ -1,7 +1,12 @@
 {
-"friendlyname" : "TF2 Arsenal",
-"name" : "Team Fortress Armory Mod",
-"author" : "NullBrainer",
-"description" : "Real Mann Co. weapons",
-"version" : "0.1.3"
+"author" : "Romeep",
+  "description" : "Real Mann Co. weapons. PDA and melee not included.\nStock weapons from the online first person shooter Team Fortress 2.\n\nWeapons made to work almost the same as in the game itself.\n\nMeaning:\n\n0.25% crit chance on every weapon (Except Sniper Rifle).\n\nMedigun that heals anything not hostile.\n\nA minigun that shoots 1200 rounds per minute.\n\nRocket Jumping (Grenade or StickyJump if you're one of those demomen)\n\nSniper Rifle that crits on full charge (played by sound with right click held down).\n\nSticky Bomb Launcher can only have 8 stickybombs out.\n\nTested to work in LAN playthroughs, as long as both host and clients have the mod installed(AKA everybody has mod installed).\n\nTested to be compatible with Frackin's Universe.\n\nSince the Jungle Inferno update, it seemed to be the best time to release this side project of mine.\nI hope you dudes out there enjoy it.\n\nWeapons are available after upgrading the anvil to tier 3 (when durasteel weapon/armor is available).\nMedigun is available when upgrading the apothecary.\n\n\n",
+  "friendlyName" : "Team Fortress 2 Stock Weapons Mod",
+  "friendlyname" : "Team Fortress 2 Stock Weapons Mod",
+  "link" : "steam://url/CommunityFilePage/1235267044",
+  "name" : "Team Fortress 2 Stock Weapons Mod",
+  "steamContentId" : "1235267044",
+  "tags" : "Weapons|Mechanics",
+  "version" : "0.1.3"
+
 }
