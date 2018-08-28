@@ -21,6 +21,6 @@
       "categoryWhitelist" : ["monster", "player"]
     }
   },
-  "damageKind": "default",
+  "damageKind": "mann",
   "damageType": "ignoresdef"
 }

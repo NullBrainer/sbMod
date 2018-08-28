@@ -12,7 +12,7 @@
   "image" : "syringe.png",
   "animationCycle" : 0.25,
   "frameNumber" : 1,
-  "damageKind" : "bow",
+  "damageKind" : "mann",
   "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
   "timeToLive" : 10,
   "pointLight" : false,

@@ -21,5 +21,5 @@
   "acceleration": 0,
   "physics": "laser",
   "damageType": "NoDamage",
-  "damageKind": "default"
+  "damageKind": "mann"
 }

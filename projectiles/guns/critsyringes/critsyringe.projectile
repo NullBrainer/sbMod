@@ -12,7 +12,7 @@
   "image" : "critsyringe.png",
   "animationCycle" : 0.25,
   "frameNumber" : 2,
-  "damageKind": "manncritical",
+  "damageKind": "manncritbullet",
   "damageType": "ignoresdef",
   "damagePoly" : [ [8, -0.2], [8.5, -0.2], [8.5, 0.2], [8, 0.2] ],
   "timeToLive" : 10,

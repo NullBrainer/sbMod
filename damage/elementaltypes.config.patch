@@ -1,0 +1,30 @@
+[ 
+	{
+		"op": "add",  "path" : "/mann",
+		"value" : 
+		{"resistanceStat" : "",
+			"damageNumberParticles" : 
+			{
+				"hit" : "manndamagenumber",
+				"stronghit" : "manndamagenumber",
+				"weakhit" : "manndamagenumber",
+				"shieldhit" : "manndamagenumber",
+				"kill" : "manndamagenumber"
+			}
+		}
+	},
+	{
+		"op": "add",  "path" : "/manncrit",
+		"value" : 
+		{"resistanceStat" : "",
+			"damageNumberParticles" : 
+			{
+				"hit" : "manncriticalhit",
+				"stronghit" : "manncriticalhit",
+				"weakhit" : "manncriticalhit",
+				"shieldhit" : "manncriticalhit",
+				"kill" : "manncriticalhit"
+			}
+		}
+	}
+]

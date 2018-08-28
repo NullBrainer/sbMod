@@ -4,7 +4,7 @@
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Trusted mercenary side arm.",
-  "shortdescription" : "Mann Co Pistol",
+  "shortdescription" : "Mann Co. Pistol",
   "tooltipKind" : "gun",
   "category" : "pistol",
   "twoHanded" : false,
@@ -48,14 +48,14 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "mannbullet",
     "projectileParameters": {
       "knockback": 6
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
       "damageKind": "manncritical",
-      "knockback": 6
+      "knockback": 12
     },
     "stances": {
       "idle": {

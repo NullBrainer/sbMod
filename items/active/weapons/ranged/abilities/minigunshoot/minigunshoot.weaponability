@@ -14,13 +14,13 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "mannbullet",
     "projectileParameters": {
-      "knockbackRange": [ 3, 7 ]
+      "knockbackRange": [ 4, 7 ]
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
-      "knockbackRange": [ 5, 10 ],
+      "knockbackRange": [ 9, 15 ],
       "damageKind": "manncritical"
     },
 

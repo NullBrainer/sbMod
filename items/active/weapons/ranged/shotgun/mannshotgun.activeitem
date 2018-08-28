@@ -49,15 +49,15 @@
     "projectileCount": 6,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "mannbullet",
     "projectileParameters": {
-      "damageKind": "shotgunbullet",
+
       "knockback": 25
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
-      "damageKind": "manncritical",
-      "knockback": 25
+      "damageKind": "manncritbullet",
+      "knockback": 35
     },
     "stances": {
       "idle": {

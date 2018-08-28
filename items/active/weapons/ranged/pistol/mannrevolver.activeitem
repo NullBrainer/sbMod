@@ -4,7 +4,7 @@
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Used by dime a dozen backstabbers.",
-  "shortdescription" : "Mann Co Revolver",
+  "shortdescription" : "Mann Co. Revolver",
   "tooltipKind" : "gun",
   "category" : "pistol",
   "twoHanded" : false,
@@ -48,14 +48,14 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "mannbullet",
     "projectileParameters": {
       "knockback": 6
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
-      "damageKind": "manncritical",
-      "knockback": 6
+      "damageKind": "manncritbullet",
+      "knockback": 10
     },
     "stances": {
       "idle": {

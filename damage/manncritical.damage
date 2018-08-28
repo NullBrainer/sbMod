@@ -1,7 +1,8 @@
 {
-  "kind" : "manncritical",
-  "effects" : {
-    "organic" : {
+  "kind": "manncritical",
+  "elementalType": "mann",
+  "effects": {
+    "organic": {
       "hit": {
         "sounds": [ "/sfx/gun/crit_hit.ogg", "/sfx/gun/crit_hit2.ogg", "/sfx/gun/crit_hit3.ogg", "/sfx/gun/crit_hit4.ogg", "/sfx/gun/crit_hit5.ogg" ],
         "particles": [
@@ -117,7 +118,7 @@
         ]
       }
     },
-    "robotic" : {
+    "robotic": {
       "hit": {
         "sounds": [ "/sfx/gun/crit_hit.ogg", "/sfx/gun/crit_hit2.ogg", "/sfx/gun/crit_hit3.ogg", "/sfx/gun/crit_hit4.ogg", "/sfx/gun/crit_hit5.ogg" ],
         "particles": [
@@ -231,7 +232,7 @@
         ]
       }
     },
-    "wooden" : {
+    "wooden": {
       "hit": {
         "sounds": [ "/sfx/gun/crit_hit.ogg", "/sfx/gun/crit_hit2.ogg", "/sfx/gun/crit_hit3.ogg", "/sfx/gun/crit_hit4.ogg", "/sfx/gun/crit_hit5.ogg" ],
         "particles": [
@@ -346,7 +347,7 @@
         ]
       }
     },
-    "stone" : {
+    "stone": {
       "hit": {
         "sounds": [ "/sfx/gun/crit_hit.ogg", "/sfx/gun/crit_hit2.ogg", "/sfx/gun/crit_hit3.ogg", "/sfx/gun/crit_hit4.ogg", "/sfx/gun/crit_hit5.ogg" ],
         "particles": [

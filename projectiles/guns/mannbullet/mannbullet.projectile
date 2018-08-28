@@ -1,10 +1,10 @@
 {
-  "projectileName": "critbullet",
-  "image": "critbullet.png",
+  "projectileName": "mannbullet",
+  "image": "mannbullet.png",
   "physics": "laser",
   "animationCycle": 0.25,
   "frameNumber": 1,
-  "damageKind": "manncritical",
+  "damageKind": "mann",
   "pointLight": false,
   "flippable": true,
   "actionOnReap": [
@@ -14,10 +14,8 @@
     }
   ],
   "statusEffects": [],
-  "power": 100.0,
-  "speed": 150,
-  "knockback": 0,
+  "power": 50.0,
+  "speed": 160,
+  "knockback": 1,
   "damageType": "ignoresdef"
-
 }
-

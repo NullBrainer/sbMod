@@ -47,13 +47,13 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "projectileType": "mannbullet",
     "projectileParameters": {
       "knockback": 5
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
-      "damageKind": "manncritical",
+      "damageKind": "manncritbullet",
       "knockback": 6
     },
 
