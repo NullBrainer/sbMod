@@ -23,7 +23,11 @@
   "animationCustom" : {
     "sounds": {
       "fire": [ "/sfx/gun/scatter_gun_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/scatter_gun_shoot_crit.ogg" ]
+      "critfire": [ "/sfx/gun/scatter_gun_shoot_crit.ogg" ],
+      "forward": [],
+      "back": [],
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ],
+      "reload": [ "/sfx/gun/scatter_gun_reload.ogg" ]
     }
   },
 
@@ -35,8 +39,8 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannmanualreloadfire/mannmanualreloadfire.lua" ],
+    "class": "MannManualReloadFire",
 
     "fireTime": 0.625,
     "baseDps": 96,
@@ -45,13 +49,15 @@
     "shotsperreload": 5.5,
     "critChance": 2.5,
 
+    "maxAmmo": 6,
+    "bulletCount": 0,
 
     "projectileCount": 10,
     "fireType": "auto",
 
     "projectileType": "mannbullet",
     "projectileParameters": {
-        "knockback": 25
+      "knockback": 25
     },
     "critProjectile": "critbullet",
     "critprojectileParameters": {
@@ -67,6 +73,27 @@
         "allowRotate": true,
         "allowFlip": true
       },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.25
+      },
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": -35,
+        "weaponRotation": 90,
+        "weaponAngularVelocity": -45,
+        "armAngularVelocity": 20,
+        "twoHanded": true,
+        "duration": 0.65,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
       "fire": {
         "duration": 0,
         "armRotation": 8,
@@ -76,8 +103,30 @@
         "allowRotate": false,
         "allowFlip": false
       },
-      "cooldown": {
+      "pumpforward": {
+        "armRotation": 8,
+        "weaponRotation": 8,
+        "weaponAngularVelocity": -10,
+        "armAngularVelocity": 10,
+        "twoHanded": true,
         "duration": 0.15,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "pumpback": {
+        "armRotation": 8,
+        "weaponRotation": 8,
+        "weaponAngularVelocity": -10,
+        "armAngularVelocity": 10,
+        "twoHanded": true,
+        "duration": 0.15,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "cooldown": {
+        "duration": 0.35,
         "armRotation": 8,
         "weaponRotation": 8,
         "twoHanded": true,

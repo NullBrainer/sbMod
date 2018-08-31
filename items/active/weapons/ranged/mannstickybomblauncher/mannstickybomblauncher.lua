@@ -1,14 +1,16 @@
 require "/scripts/vec2.lua"
 
 function init()
-  -- scale damage and calculate energy cost
   self.pType = config.getParameter("projectileType")
   self.pParams = config.getParameter("projectileParameters", {})
   self.pParams.power = self.pParams.power
-  self.energyPerShot = config.getParameter("energyUsage")
   self.critChance = config.getParameter("critChance")
   self.critChance = self.critChance/100.00
   self.fireOffset = config.getParameter("fireOffset")
+  self.bulletCount = config.getParameter("bulletCount")
+  self.maxAmmo = config.getParameter("maxAmmo", 8)
+  SetGunState() 
+
   updateAim()
 
   storage.fireTimer = storage.fireTimer or 0
@@ -24,9 +26,14 @@ CritActive = (critvalue < self.critChance)
 end
 
 function activate(fireMode, shiftHeld)
-  if fireMode == "alt" then
-    triggerProjectiles()
-  end
+	if fireMode == "alt" and #storage.activeProjectiles > 0 then
+	triggerProjectiles()
+	elseif fireMode == "alt" 
+	and self.bulletCount >= 0 
+	and self.bulletCount < self.maxAmmo
+	and storage.fireTimer <= 0 then
+	reload()
+	end
 end
 
 function update(dt, fireMode, shiftHeld)
@@ -34,11 +41,14 @@ function update(dt, fireMode, shiftHeld)
 
   storage.fireTimer = math.max(storage.fireTimer - dt, 0)
   self.recoilTimer = math.max(self.recoilTimer - dt, 0)
-
-  if fireMode == "primary"
-      and storage.fireTimer <= 0
-      and not world.pointTileCollision(firePosition())
-      and status.overConsumeResource("energy", self.energyPerShot) then
+	if fireMode == "primary" 
+	and storage.fireTimer <= 0
+	and self.bulletCount == 0 then
+	emptyFire()
+	elseif fireMode == "primary"  
+		and self.bulletCount > 0
+		and storage.fireTimer <= 0
+		and not world.pointTileCollision(firePosition()) then
 
     storage.fireTimer = config.getParameter("fireTime", 1.0)
 	updatecritChance()
@@ -94,7 +104,32 @@ function fire()
   else
   animator.playSound("fire")
   end
+  
+  self.bulletCount = self.bulletCount - 1
+  activeItem.setInstanceValue("bulletCount", self.bulletCount)	
+  SetGunState()
+
   self.recoilTimer = config.getParameter("recoilTime", 0.12)
+end
+
+function reload()    
+  self.bulletCount = self.bulletCount + 1
+  activeItem.setInstanceValue("bulletCount", self.bulletCount)	
+  SetGunState()
+  animator.playSound("reload")
+  self.recoilTimer = config.getParameter("reloadTime", 0.6)
+  storage.fireTimer = config.getParameter("reloadTime", 0.5)
+  end
+  
+function emptyFire()
+animator.playSound("empty")
+storage.fireTimer = config.getParameter("reloadTime", 0.5)
+end
+
+function SetGunState()
+local ammo = self.bulletCount
+self.bulletCount = ammo
+return self.bulletCount
 end
 
 function updateAim()

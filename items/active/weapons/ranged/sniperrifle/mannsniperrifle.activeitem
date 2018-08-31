@@ -1,12 +1,12 @@
 {
   "itemName" : "mannsniperrifle",
-  "price" : 15,
+  "price" : 5,
   "inventoryIcon" : "mannsniperrifle.png",
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Used to be powered by being zoomed in.",
   "shortdescription" : "Mann Co. Sniper Rifle",
-  "level" : 5,
+  "level" : 1,
   "tooltipKind" : "gun",
   "category" : "sniperRifle",
   "itemTags" : ["weapon","ranged","rifle"],
@@ -21,9 +21,11 @@
   },
   "animationCustom" : {
     "sounds": {
-      "fire": [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/sniper_shoot.ogg", "/sfx/gun/sniper_shoot_crit.ogg" ],
-      "charged": ["/sfx/interface/recharged.ogg"]
+      "fire": [ "/sfx/gun/sniper_shoot.ogg" ],
+      "critfire": [ "/sfx/gun/sniper_shoot_crit.ogg" ],     
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ],
+      "reload": [ "/sfx/gun/sniper_worldreload.ogg" ],
+      "charged": [ "/sfx/interface/recharged.ogg" ]
     }
   },
 
@@ -35,8 +37,8 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannsniperfire/mannsniperfire.lua" ],
+    "class": "MannSniperFire",
 
     "fireTime": 1.55,
     "baseDps": 32.26,
@@ -48,10 +50,21 @@
     "projectileCount": 1,
     "fireType": "auto",
 
-    "projectileType": "standardbullet",
+    "zoomChange": 0.4,
+    "chargeTime": 3.3,
+    "maxAmmo": 1,
+    "bulletCount": 0,
+
+    "projectileType": "mannbullet",
     "projectileParameters": {
       "knockback": 20
     },
+    "critProjectile": "critbullet",
+    "critprojectileParameters": {
+      "damageKind": "manncritbullet",
+      "knockback": 35
+    },
+
     "stances": {
       "idle": {
         "armRotation": 0,
@@ -61,6 +74,15 @@
         "allowRotate": true,
         "allowFlip": true
       },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.5
+      },
       "fire": {
         "duration": 0,
         "armRotation": 5,
@@ -69,6 +91,18 @@
 
         "allowRotate": false,
         "allowFlip": false
+      },
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": -3,
+        "weaponRotation": -8,
+        "weaponAngularVelocity": -8,
+        "armAngularVelocity": 4,
+        "twoHanded": false,
+        "duration": 0.5,
+
+        "allowRotate": true,
+        "allowFlip": true
       },
       "cooldown": {
         "duration": 0.25,
@@ -81,9 +115,6 @@
       }
     }
   },
-  "altAbilityType": "mannzoom",
-  "altAbility": {},
-
 
   "builder" : "/items/buildscripts/buildunrandweapon.lua"
 }

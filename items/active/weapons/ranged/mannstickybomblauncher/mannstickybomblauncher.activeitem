@@ -19,9 +19,12 @@
   "animationCustom": {},
   "scripts": [ "mannstickybomblauncher.lua" ],
   "fireOffset": [ 3.10, 0.625 ],
-  "fireTime": 0.67,
+  "fireTime": 0.6,
   "inaccuracy": 0.02,
   "critChance": 2.5,
+  "reloadTime": 0.67,
+  "bulletCount": 0,
+  "maxAmmo": 8,
 
   "projectileType": "remotestickybomb",
   "projectileParameters": {
@@ -33,6 +36,6 @@
     "power": 120,
     "timeToLive": 8,
     "damageKind": "manncritical"
-  },
-  "energyUsage": 13
+  }
+
 }

@@ -1,42 +1,48 @@
 {
-  "itemName" : "mannshotgun",
-  "price" : 5,
-  "maxStack" : 1,
-  "rarity" : "Common",
-  "description" : "A sawn-off shotgun.",
-  "shortdescription" : "Mann Co. Shotgun",
-  "tooltipKind" : "gun",
-  "category" : "shotgun",
-  "twoHanded" : true,
-  "itemTags" : ["weapon","ranged","shotgun"],
-  "level" : 2,
+  "itemName": "mannshotgun",
+  "price": 5,
+  "maxStack": 1,
+  "rarity": "Common",
+  "description": "A sawn-off shotgun.",
+  "shortdescription": "Mann Co. Shotgun",
+  "tooltipKind": "gun",
+  "category": "shotgun",
+  "twoHanded": true,
+  "itemTags": [ "weapon", "ranged", "shotgun" ],
+  "level": 1,
 
-  "inventoryIcon" : "mannshotgun.png",
+  "inventoryIcon": "mannshotgun.png",
 
-  "animation" : "/items/active/weapons/ranged/gun.animation",
+  "animation": "/items/active/weapons/ranged/gun.animation",
   "animationParts": {
     "butt": "",
     "middle": "mannshotgun.png",
     "barrel": "",
     "muzzleFlash": "/items/active/weapons/ranged/muzzleflash.png"
   },
-  "animationCustom" : {
+  "animationCustom": {
+
     "sounds": {
       "fire": [ "/sfx/gun/shotgun_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/shotgun_shoot_crit.ogg" ]
+      "critfire": [ "/sfx/gun/shotgun_shoot_crit.ogg" ],
+      "forward": [ "/sfx/gun/shotgun_cock_forward.ogg" ],
+      "back": [ "/sfx/gun/shotgun_cock_back.ogg" ],
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ],
+      "reload": [ "/sfx/gun/shotgun_reload.ogg" ]
+
     }
   },
 
-  "baseOffset" : [0.9, 0.05],
-  "muzzleOffset" : [2, 0.125],
+  "baseOffset": [ 0.9, 0.05 ],
+  "muzzleOffset": [ 2, 0.125 ],
 
-  "scripts" : ["/items/active/weapons/ranged/gun.lua"],
+  "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
-  "elementalType" : "physical",
+  "elementalType": "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannmanualreloadfire/mannmanualreloadfire.lua" ],
+    "class": "MannManualReloadFire",
 
     "fireTime": 0.625,
     "baseDps": 96,
@@ -45,7 +51,8 @@
     "shotsperreload": 5.5,
     "critChance": 2.5,
 
-
+    "maxAmmo": 6,
+    "bulletCount": 0,
     "projectileCount": 6,
     "fireType": "auto",
 
@@ -68,19 +75,62 @@
         "allowRotate": true,
         "allowFlip": true
       },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.25
+      },
       "fire": {
         "duration": 0,
-        "armRotation": 8,
-        "weaponRotation": 8,
+        "armRotation": 3,
+        "weaponRotation": 4,
         "twoHanded": true,
 
         "allowRotate": false,
         "allowFlip": false
       },
-      "cooldown": {
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": -3,
+        "weaponRotation": -8,
+        "weaponAngularVelocity": -8,
+        "armAngularVelocity": 4,
+        "twoHanded": false,
+        "duration": 0.5,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "pumpforward": {
+        "armRotation": 3,
+        "weaponRotation": 4,
+        "weaponAngularVelocity": -10,
+        "armAngularVelocity": 10,
+        "twoHanded": true,
         "duration": 0.15,
-        "armRotation": 8,
-        "weaponRotation": 8,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "pumpback": {
+        "armRotation": 3.5,
+        "weaponRotation": 4.5,
+        "weaponAngularVelocity": -10,
+        "armAngularVelocity": 10,
+        "twoHanded": true,
+        "duration": 0.15,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
+      "cooldown": {
+        "duration": 0.325,
+        "armRotation": 1.5,
+        "weaponRotation": 1.5,
         "twoHanded": true,
 
         "allowRotate": false,
@@ -89,5 +139,5 @@
     }
   },
 
-  "builder" : "/items/buildscripts/buildunrandweapon.lua"
+  "builder": "/items/buildscripts/buildunrandweapon.lua"
 }

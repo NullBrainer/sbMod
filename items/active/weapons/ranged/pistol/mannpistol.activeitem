@@ -7,7 +7,7 @@
   "shortdescription" : "Mann Co. Pistol",
   "tooltipKind" : "gun",
   "category" : "pistol",
-  "twoHanded" : false,
+  "twoHanded" : true,
   "itemTags" : ["weapon","ranged","pistol"],
   "level" : 1,
 
@@ -23,7 +23,9 @@
   "animationCustom" : {
     "sounds": {
       "fire": [ "/sfx/gun/pistol_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/pistol_shoot_crit.ogg" ]
+      "critfire": [ "/sfx/gun/pistol_shoot_crit.ogg" ],
+      "reload": [ "/sfx/gun/pistol_worldreload.ogg" ],
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ]
     }
   },
 
@@ -35,8 +37,8 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannreloadfire/mannreloadfire.lua" ],
+    "class": "MannReloadFire",
 
     "fireTime": 0.02,
     "baseDps": 750,
@@ -45,6 +47,10 @@
     "inaccuracy": 0.025,
     "critChance": 2.5,
     "timedCrits": true,
+
+    "maxAmmo": 12,
+    "bulletCount": 0,
+
     "projectileCount": 1,
     "fireType": "auto",
 
@@ -74,6 +80,27 @@
 
         "allowRotate": false,
         "allowFlip": false
+      },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": false,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.1
+      },
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": 2,
+        "weaponRotation": -40,
+        "weaponAngularVelocity": 1,
+        "armAngularVelocity": 0,
+        "twoHanded": true,
+        "duration": 0.5,
+
+        "allowRotate": true,
+        "allowFlip": true
       },
       "cooldown": {
         "duration": 0.15,

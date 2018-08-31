@@ -9,7 +9,7 @@
   "category" : "machinepistol",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","machinepistol"],
-  "level" : 5,
+  "level" : 2,
 
   "inventoryIcon" : "mannsmg.png",
 
@@ -23,7 +23,9 @@
   "animationCustom" : {
     "sounds": {
       "fire": [ "/sfx/gun/smg_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/smg_shoot_crit.ogg" ]
+      "critfire": [ "/sfx/gun/smg_shoot_crit.ogg" ],
+      "reload": [ "/sfx/gun/smg_worldreload.ogg" ],
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ]
     }
   },
 
@@ -35,8 +37,8 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannreloadfire/mannreloadfire.lua" ],
+    "class": "MannReloadFire",
 
     "fireTime": 0.1,
     "baseDps": 80,
@@ -46,6 +48,9 @@
     "timedCrits": true,
     "projectileCount": 1,
     "fireType": "auto",
+
+    "maxAmmo": 25,
+    "bulletCount": 0,
 
     "projectileType": "mannbullet",
     "projectileParameters": {
@@ -75,8 +80,29 @@
         "allowRotate": false,
         "allowFlip": false
       },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.1
+      },
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": 2,
+        "weaponRotation": 40,
+        "weaponAngularVelocity": 1,
+        "armAngularVelocity": 0,
+        "twoHanded": false,
+        "duration": 0.5,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
       "cooldown": {
-        "duration": 0.0,
+        "duration": 0.09,
         "armRotation": 3,
         "weaponRotation": 3,
         "twoHanded": true,

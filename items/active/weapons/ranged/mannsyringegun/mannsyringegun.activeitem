@@ -23,7 +23,9 @@
   "animationCustom" : {
     "sounds": {
       "fire": [ "/sfx/gun/syringegun_shoot.ogg" ],
-      "critfire": [ "/sfx/gun/syringegun_shoot_crit.ogg" ]
+      "critfire": [ "/sfx/gun/syringegun_shoot_crit.ogg" ],
+      "reload": [ "/sfx/gun/syringegun_worldreload.ogg" ],
+      "empty": [ "/sfx/gun/shotgun_empty.ogg" ]
     }
   },
 
@@ -35,8 +37,8 @@
   "elementalType" : "physical",
 
   "primaryAbility": {
-    "scripts": [ "/items/active/weapons/ranged/abilities/manngunfire/manngunfire.lua" ],
-    "class": "MannGunFire",
+    "scripts": [ "/items/active/weapons/ranged/abilities/mannreloadfire/mannreloadfire.lua" ],
+    "class": "MannReloadFire",
 
     "fireTime": 0.1,
     "baseDps": 25,
@@ -48,6 +50,9 @@
 
     "projectileCount": 1,
     "fireType": "auto",
+
+    "maxAmmo": 50,
+    "bulletCount": 0,
 
     "projectileType": "syringe",
     "projectileParameters": {
@@ -76,8 +81,29 @@
         "allowRotate": false,
         "allowFlip": false
       },
+      "emptyfire": {
+        "armRotation": 0,
+        "weaponRotation": 0,
+        "twoHanded": true,
+
+        "allowRotate": true,
+        "allowFlip": true,
+        "duration": 0.1
+      },
+      "reload": {
+        "aimAngle": 0,
+        "armRotation": 2,
+        "weaponRotation": 40,
+        "weaponAngularVelocity": 1,
+        "armAngularVelocity": 0,
+        "twoHanded": false,
+        "duration": 0.5,
+
+        "allowRotate": true,
+        "allowFlip": true
+      },
       "cooldown": {
-        "duration": 0.05,
+        "duration": 0.1,
         "armRotation": 1,
         "weaponRotation": 1,
         "twoHanded": true,

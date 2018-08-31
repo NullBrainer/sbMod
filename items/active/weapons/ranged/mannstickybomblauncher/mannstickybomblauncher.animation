@@ -16,6 +16,8 @@
   "sounds": {
     "fire": [ "/sfx/gun/stickybomblauncher_shoot.ogg" ],
     "critfire": [ "/sfx/gun/stickybomblauncher_shoot_crit.ogg" ],
-    "trigger": [ "/sfx/interface/stickybomblauncher_det.ogg" ]
+    "trigger": [ "/sfx/interface/stickybomblauncher_det.ogg" ],
+    "empty": [ "/sfx/gun/shotgun_empty.ogg" ],
+    "reload": [ "/sfx/gun/stickybomblauncher_worldreload.ogg" ]
   }
 }
