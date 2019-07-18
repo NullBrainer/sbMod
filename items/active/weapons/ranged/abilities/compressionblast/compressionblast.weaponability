@@ -76,7 +76,7 @@
         "armRotation" : 0,
         "weaponRotation" : 0,
         "twoHanded" : true,
-
+         "frontArmFrame": "run.5",
         "allowRotate" : false,
         "allowFlip" : false
       }

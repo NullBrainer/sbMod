@@ -1,6 +1,6 @@
 {
   "itemName" : "mannrevolver",
-  "price" : 350,
+  "price" : 100,
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Used by dime a dozen backstabbers.",

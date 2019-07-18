@@ -22,9 +22,9 @@
       "overdrawLength": 0.2,
       "taper": 0,
       "waveform": {
-        "frequency": 2.5,
-        "amplitude": 0.1,
-        "movement": 40.0
+        "frequency": 1.8,
+        "amplitude": 0.2,
+        "movement": 20.0
       },
       "fullbright": true
     },
@@ -42,7 +42,9 @@
         "twoHanded": true,
 
         "allowRotate": true,
-        "allowFlip": true
+        "allowFlip": true,
+        "frontArmFrame": "run.3",
+        "backArmFrame": "jump.3"
       },
       "fire": {
         "duration": 0,
@@ -51,13 +53,17 @@
         "twoHanded": true,
 
         "allowRotate": true,
-        "allowFlip": true
+        "allowFlip": true,
+        "frontArmFrame": "run.3",
+        "backArmFrame": "jump.3"
       },
       "cooldown": {
         "duration": 0.1,
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+        "frontArmFrame": "run.3",
+        "backArmFrame": "jump.3",
 
         "allowRotate": true,
         "allowFlip": true

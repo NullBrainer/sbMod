@@ -16,7 +16,7 @@
   "statusEffects": [],
   "power": 100.0,
   "speed": 150,
-  "knockback": 0,
+  "knockback": 5,
   "damageType": "ignoresdef"
 
 }

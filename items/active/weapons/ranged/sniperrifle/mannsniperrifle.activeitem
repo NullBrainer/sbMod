@@ -1,6 +1,6 @@
 {
   "itemName" : "mannsniperrifle",
-  "price" : 5,
+  "price" : 100,
   "inventoryIcon" : "mannsniperrifle.png",
   "maxStack" : 1,
   "rarity" : "Common",
@@ -29,8 +29,8 @@
     }
   },
 
-  "baseOffset" : [0.9, 0.56],
-  "muzzleOffset" : [2.4, -0.30],
+  "baseOffset" : [0.5, 0.56],
+  "muzzleOffset" : [2, -0.30],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
@@ -70,7 +70,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
+        "frontArmFrame" :  "swim.2",
         "allowRotate": true,
         "allowFlip": true
       },
@@ -78,16 +78,17 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
+        "frontArmFrame": "swim.2",
         "allowRotate": true,
         "allowFlip": true,
         "duration": 0.5
       },
       "fire": {
-        "duration": 0,
+        "duration": 0.25,
         "armRotation": 5,
         "weaponRotation": 5,
         "twoHanded": true,
+        "frontArmFrame": "swim.2",
 
         "allowRotate": false,
         "allowFlip": false
@@ -98,8 +99,9 @@
         "weaponRotation": -8,
         "weaponAngularVelocity": -8,
         "armAngularVelocity": 4,
-        "twoHanded": false,
+        "twoHanded": true,
         "duration": 0.5,
+        "frontArmFrame": "run.1",
 
         "allowRotate": true,
         "allowFlip": true
@@ -109,7 +111,7 @@
         "armRotation": 8,
         "weaponRotation": 8,
         "twoHanded": true,
-
+        "frontArmFrame": "swim.2",
         "allowRotate": false,
         "allowFlip": false
       }

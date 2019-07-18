@@ -1,12 +1,12 @@
 {
   "itemName" : "mannrocketlauncher",
-  "price" : 10,
+  "price" : 100,
   "inventoryIcon" : "mannrocketlauncher.png",
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Used to liberate.",
   "shortdescription" : "Mann Co. Rocket Launcher",
-  "level" : 6,
+  "level" : 1,
   "tooltipKind" : "gun",
   "category" : "rocketLauncher",
   "itemTags" : ["weapon","ranged","rocketlauncher"],
@@ -81,12 +81,12 @@
 
     "projectileType": "stockrocket",
     "projectileParameters": {
-      "knockback": 40
+      "knockback": 1
     },
-
+    
     "critProjectile": "critstockrocket",
     "critprojectileParameters": {
-      "knockback": 40,
+      "knockback": 30,
       "damageKind": "manncritical"
 
     },
@@ -96,6 +96,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+        "frontArmFrame": "swim.2",
 
         "allowRotate": true,
         "allowFlip": true
@@ -104,6 +105,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+        "frontArmFrame": "swim.2",
 
         "allowRotate": true,
         "allowFlip": true,
@@ -114,18 +116,20 @@
         "armRotation": 5,
         "weaponRotation": 5,
         "twoHanded": true,
+        "frontArmFrame": "swim.2",
 
         "allowRotate": false,
         "allowFlip": false
       },
       "reload": {
-        "aimAngle": 0,
         "armRotation": -50,
         "weaponRotation": -1,
         "weaponAngularVelocity": 1,
         "armAngularVelocity": 20,
-        "twoHanded": false,
+        "twoHanded": true,
         "duration": 0.8,
+        "frontArmFrame": "swim.2",
+        "backArmFrame": "run.4",
 
         "allowRotate": true,
         "allowFlip": true
@@ -136,6 +140,7 @@
 
         "twoHanded": true,
         "duration": 0.0,
+        "frontArmFrame": "swim.2",
 
         "allowRotate": true,
         "allowFlip": true
@@ -143,6 +148,7 @@
       "pumpback": {
         "armRotation": 3.5,
         "weaponRotation": 4.5,
+        "frontArmFrame": "swim.2",
 
         "twoHanded": true,
         "duration": 0,
@@ -154,8 +160,9 @@
         "duration": 0.8,
         "armRotation": 7,
         "weaponRotation": 7,
-        "twoHanded": true,
+        "frontArmFrame": "swim.2",
 
+        "twoHanded": true,
         "allowRotate": false,
         "allowFlip": false
       }

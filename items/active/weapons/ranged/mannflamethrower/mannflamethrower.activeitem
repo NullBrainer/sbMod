@@ -1,7 +1,7 @@
 {
   "itemName": "mannflamethrower",
-  "level": 3,
-  "price": 30,
+  "level": 1,
+  "price": 100,
   "maxStack": 1,
   "rarity": "Common",
   "description": "A mercenary's favorite hippy burner.",
@@ -28,8 +28,8 @@
       "fireEnd": [ "/sfx/gun/flame_thrower_end.ogg" ]
     }
   },
-  "baseOffset": [ 1.45, 0 ],
-  "muzzleOffset": [ 2.9, 0.4 ],
+  "baseOffset": [ -0.05, -0.15 ],
+  "muzzleOffset": [ 2.9, 0.45 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 
@@ -63,7 +63,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
+        "frontArmFrame": "run.5",
         "allowRotate": true,
         "allowFlip": true
       },
@@ -72,7 +72,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
+        "frontArmFrame": "run.5",
         "allowRotate": true,
         "allowFlip": true
       },
@@ -81,7 +81,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
-
+        "frontArmFrame": "run.5",
         "allowRotate": true,
         "allowFlip": true
       }

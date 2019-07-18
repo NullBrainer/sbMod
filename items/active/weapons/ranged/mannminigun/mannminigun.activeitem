@@ -1,7 +1,7 @@
 {
   "itemName": "mannminigun",
-  "level": 2,
-  "price": 1500,
+  "level": 1,
+  "price": 100,
   "maxStack": 1,
   "rarity": "Common",
   "description": "Her name is Sasha",
@@ -29,7 +29,7 @@
       "fireEnd": [ "/sfx/gun/minigun_wind_down.ogg" ]
     }
   },
-  "baseOffset": [ 1.65, -0.5 ],
+  "baseOffset": [ 0, -1 ],
   "muzzleOffset": [ 2.4, 0.27 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],

@@ -1,14 +1,15 @@
 {
   "itemName": "mannmedigun",
-  "price": 640,
+  "price": 100,
   "twoHanded": true,
   "inventoryIcon": "medigun.png",
+  "largeImage":"medigun.png",
   "maxStack": 1,
   "rarity": "Rare",
   "description": "The medical tool of a mercenary.",
   "shortdescription": "Medigun",
-  "tooltipKind": "gun",
-  "level": 5,
+  "tooltipKind": "tool",
+  "level": 7,
   "category": "uniqueWeapon",
   "itemTags": [ "weapon", "ranged" ],
 
@@ -25,7 +26,8 @@
       "noTarget": [ "/sfx/gun/medigun_no_target.ogg" ]
     }
   },
-  "muzzleOffset": [ 2.0, 0.27 ],
+  "baseOffset": [ -0.05, -0.25 ],
+  "muzzleOffset": [ 1.5, 0.1 ],
 
   "scripts": [ "/items/active/weapons/ranged/gun.lua" ],
 

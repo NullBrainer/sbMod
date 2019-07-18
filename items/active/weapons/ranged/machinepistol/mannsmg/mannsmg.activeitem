@@ -1,6 +1,6 @@
 {
   "itemName": "mannsmg",
-  "price" : 90,
+  "price" : 100,
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Quality Hippie mower",
@@ -9,7 +9,7 @@
   "category" : "machinepistol",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","machinepistol"],
-  "level" : 2,
+  "level" : 1,
 
   "inventoryIcon" : "mannsmg.png",
 
@@ -68,6 +68,9 @@
         "weaponRotation": 0,
         "twoHanded": true,
 
+        "frontArmFrame": "run.2",
+       
+
         "allowRotate": true,
         "allowFlip": true
       },
@@ -76,6 +79,7 @@
         "armRotation": 3,
         "weaponRotation": 3,
         "twoHanded": true,
+        "frontArmFrame": "run.2",
 
         "allowRotate": false,
         "allowFlip": false
@@ -84,6 +88,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+        "frontArmFrame": "run.2",
 
         "allowRotate": true,
         "allowFlip": true,
@@ -95,9 +100,10 @@
         "weaponRotation": 40,
         "weaponAngularVelocity": 1,
         "armAngularVelocity": 0,
-        "twoHanded": false,
+        "twoHanded": true,
         "duration": 0.5,
-
+        "frontArmFrame": "run.2",
+        "backArmFrame": "jump.1",
         "allowRotate": true,
         "allowFlip": true
       },
@@ -106,6 +112,7 @@
         "armRotation": 3,
         "weaponRotation": 3,
         "twoHanded": true,
+        "frontArmFrame": "run.2",
 
         "allowRotate": false,
         "allowFlip": false

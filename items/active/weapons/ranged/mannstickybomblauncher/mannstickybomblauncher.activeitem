@@ -1,10 +1,10 @@
 {
   "itemName": "mannstickybomblauncher",
-  "price": 1500,
-  "level": 6,
+  "price": 100,
+  "level": 1,
   "maxStack": 1,
   "rarity": "Common",
-  "description": "Launches sticky bombs than explode remotely",
+  "description": "Launches up to 8 sticky bombs that explode remotely",
   "shortdescription": "Sticky Bomb Launcher",
   "tooltipKind": "base",
   "category": "grenadeLauncher",

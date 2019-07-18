@@ -1,6 +1,6 @@
 {
   "itemName" : "mannpistol",
-  "price" : 350,
+  "price" : 100,
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "Trusted mercenary side arm.",
@@ -68,6 +68,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": false,
+       
 
         "allowRotate": true,
         "allowFlip": true
@@ -88,7 +89,7 @@
 
         "allowRotate": true,
         "allowFlip": true,
-        "duration": 0.1
+        "duration": 0.15
       },
       "reload": {
         "aimAngle": 0,
@@ -98,6 +99,7 @@
         "armAngularVelocity": 0,
         "twoHanded": true,
         "duration": 0.5,
+
 
         "allowRotate": true,
         "allowFlip": true

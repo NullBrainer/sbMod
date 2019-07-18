@@ -1,6 +1,6 @@
 {
   "itemName" : "mannscattergun",
-  "price" : 5,
+  "price" : 100,
   "maxStack" : 1,
   "rarity" : "Common",
   "description" : "A Boston Favorite.",
@@ -9,7 +9,7 @@
   "category" : "shotgun",
   "twoHanded" : true,
   "itemTags" : ["weapon","ranged","shotgun"],
-  "level" : 2,
+  "level" : 1,
 
   "inventoryIcon" : "mannscattergun.png",
 
@@ -31,8 +31,8 @@
     }
   },
 
-  "baseOffset" : [0.9, 0.05],
-  "muzzleOffset" : [2, 0.125],
+  "baseOffset" : [0.1, -0.2],
+  "muzzleOffset" : [1.85, 0.15],
 
   "scripts" : ["/items/active/weapons/ranged/gun.lua"],
 
@@ -66,9 +66,10 @@
     },
     "stances": {
       "idle": {
-        "armRotation": 0,
-        "weaponRotation": 0,
+        "armRotation": -6,//-n
+        "weaponRotation": 6,//n
         "twoHanded": true,
+        "frontArmFrame": "run.3",
 
         "allowRotate": true,
         "allowFlip": true
@@ -77,6 +78,7 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+        "frontArmFrame": "run.3",
 
         "allowRotate": true,
         "allowFlip": true,
@@ -84,52 +86,58 @@
       },
       "reload": {
         "aimAngle": 0,
-        "armRotation": -35,
-        "weaponRotation": 90,
-        "weaponAngularVelocity": -45,
-        "armAngularVelocity": 20,
+        "armRotation": -5,
+        "weaponRotation": 35,
+        "weaponAngularVelocity": -15,
+        "armAngularVelocity": -25,
         "twoHanded": true,
         "duration": 0.65,
+        "frontArmFrame": "run.3",
+        "backArmFrame" :  "run.4",
 
         "allowRotate": true,
         "allowFlip": true
       },
       "fire": {
         "duration": 0,
-        "armRotation": 8,
-        "weaponRotation": 8,
+        "armRotation": -2,
+        "weaponRotation": 9,
         "twoHanded": true,
+        "frontArmFrame": "run.3",
 
         "allowRotate": false,
         "allowFlip": false
       },
       "pumpforward": {
-        "armRotation": 8,
-        "weaponRotation": 8,
-        "weaponAngularVelocity": -10,
+        "armRotation": -2,
+        "weaponRotation": 9,
+        "weaponAngularVelocity": -5,
         "armAngularVelocity": 10,
         "twoHanded": true,
         "duration": 0.15,
+        "frontArmFrame": "run.3",
 
         "allowRotate": true,
         "allowFlip": true
       },
       "pumpback": {
-        "armRotation": 8,
-        "weaponRotation": 8,
-        "weaponAngularVelocity": -10,
+        "armRotation": -2,
+        "weaponRotation": 9,
+        "weaponAngularVelocity": -5,
         "armAngularVelocity": 10,
         "twoHanded": true,
         "duration": 0.15,
+        "frontArmFrame": "run.3",
 
         "allowRotate": true,
         "allowFlip": true
       },
       "cooldown": {
         "duration": 0.35,
-        "armRotation": 8,
-        "weaponRotation": 8,
+        "armRotation": -6,
+        "weaponRotation": 9,
         "twoHanded": true,
+        "frontArmFrame": "run.3",
 
         "allowRotate": false,
         "allowFlip": false

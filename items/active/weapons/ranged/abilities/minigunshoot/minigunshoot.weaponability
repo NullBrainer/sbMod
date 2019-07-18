@@ -26,9 +26,12 @@
 
     "stances": {
       "idle": {
-        "armRotation": 0,
-        "weaponRotation": 45,
+        "armRotation": 45,
+        "weaponRotation": 0,
         "twoHanded": true,
+
+        "frontArmFrame": "run.5",
+        "backArmFrame": "jump.4",
 
         "allowRotate": true,
         "allowFlip": true
@@ -38,6 +41,10 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+
+        "frontArmFrame": "run.5",
+        "backArmFrame": "jump.4",
+
         "allowRotate": true,
         "allowFlip": true
       },
@@ -47,6 +54,9 @@
         "weaponRotation": 0,
         "twoHanded": true,
 
+        "frontArmFrame": "run.5",
+        "backArmFrame": "jump.4",
+
         "allowRotate": true,
         "allowFlip": true
       },
@@ -55,6 +65,9 @@
         "armRotation": 0,
         "weaponRotation": 0,
         "twoHanded": true,
+
+        "frontArmFrame": "run.5",
+        "backArmFrame": "jump.4",
 
         "allowRotate": true,
         "allowFlip": true
