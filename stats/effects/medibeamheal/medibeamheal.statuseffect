@@ -1,17 +1,17 @@
 {
   "name" : "medibeamheal",
   "effectConfig" : {
-    "healAmount" : 0.41,
+    "healAmount" : 0.47,
     "emissionRate" : 5
   },
-  "defaultDuration" : 0.01,
+  "defaultDuration" : 0.1,
 
   "scripts" : [
-    "heal.lua"
+    "medibeamheal.lua"
   ],
 
   "animationConfig" : "medibeamheal.animation",
 
   "label" : "Healing",
-  "icon" : "/interface/statuses/heal.png"
+  "icon" : "/interface/statuses/medibeamheal.png"
 }
