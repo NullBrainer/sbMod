@@ -8,7 +8,7 @@
           "particle" : {
             "type" : "animated",
             "mode" : "LoopForever",
-            "animation" : "/animations/statuseffects/heal/heal.animation",
+            "animation" : "/animations/statuseffects/medibeamheal/medibeamheal.animation",
             "size" : 0.8,
             "position" : [0.0, 0.0],
             "offsetRegion" : [0, 0, 0, 0],
